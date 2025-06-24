@@ -1,0 +1,207 @@
+"use client";
+import { Logo } from "./Logo";
+import { Nav } from "./nav/Nav";
+import Image from "next/image";
+import React, { useState } from "react";
+import Link from "next/Link";
+
+// import { FaSearch } from "react-icons/fa";
+
+function KisanBasketLogo() {
+	return (
+		<>
+			<div style={{ position: "relative", width: "200px", height: "80px" }}>
+				<Image
+					src="/images/kisanbasketLogo.svg"
+					alt="kisan basket image"
+					fill
+					style={{ objectFit: "contain" }}
+				/>
+			</div>
+		</>
+	);
+}
+export function Header({ channel }: { channel: string }) {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [showSearch, setShowSearch] = useState(false);
+	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+	const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+	return (
+		<header className="sticky top-0 z-20 bg-neutral-100/50 backdrop-blur-md">
+			<div className="mx-auto max-w-7xl px-3 sm:px-8">
+				<div className="flex h-16 justify-between gap-4 md:gap-8">
+					<div
+						className="h-[50px] w-[120px]  cursor-pointer md:h-[64px] md:w-[150px]"
+						style={{ position: "relative" }}
+					>
+						<Image
+							src="/images/kisanbasketLogo.svg"
+							alt="kisan basket image"
+							fill
+							style={{ objectFit: "contain" }}
+						/>
+					</div>
+					<div className="font-inter hidden items-center justify-center text-center text-[15px] font-medium leading-[20px] tracking-[0%] text-[#242424] md:flex md:space-x-4 lg:space-x-8">
+						<Link href="/">Home</Link>
+						<Link href="/aboug">About</Link>
+						<Link href="/market">Market</Link>
+						<Link href="/services">Services</Link>
+						<Link href="/blog">Blog</Link>
+					</div>
+					<div className="hidden items-center md:flex ">
+						{/* <FaSearch /> */}
+
+						<div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
+							<Image
+								src="/images/search.svg"
+								alt="kisan basket image"
+								fill
+								style={{ objectFit: "contain" }}
+							/>
+						</div>
+						<div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
+							<Image src="/images/cart.svg" alt="kisan basket image" fill style={{ objectFit: "contain" }} />
+						</div>
+						<div onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+							<div
+								onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+								className="text-destructive-foreground ml-2  block cursor-pointer rounded-md bg-[#646A36] px-2 py-2 text-sm text-white shadow-sm "
+							>
+								Sign In
+							</div>
+						</div>
+					</div>
+					{/* Mobile Menu Button */}
+					<button
+						className="text-headerTextColor rounded-md p-2 font-semibold hover:text-black md:hidden"
+						onClick={toggleMenu}
+						aria-label="Toggle Menu"
+					>
+						{isMenuOpen ? (
+							<div className="h-[30px] w-[30px]">X</div>
+						) : (
+							<div className="" style={{ position: "relative", width: "30px", height: "32px" }}>
+								<Image
+									src="/images/menu.svg"
+									alt="kisan basket image"
+									fill
+									style={{ objectFit: "contain" }}
+								/>
+							</div>
+						)}
+					</button>
+					{/* <Nav channel={channel} /> */}
+				</div>
+				{/* Mobile Menu */}
+				{isMenuOpen && (
+					<nav className="text-headerTextColor space-y-2 bg-white px-4 pb-4 font-semibold shadow-md md:hidden">
+						<Link
+							href="/"
+							className="block py-1  transition hover:text-green-700"
+							onClick={() => setIsMenuOpen(false)}
+						>
+							Home
+						</Link>
+						<Link
+							href="/shop"
+							className="block py-1  transition hover:text-green-700"
+							onClick={() => setIsMenuOpen(false)}
+						>
+							Shop
+						</Link>
+						<Link
+							href="/about"
+							className="block py-1  transition hover:text-green-700"
+							onClick={() => setIsMenuOpen(false)}
+						>
+							About
+						</Link>
+						{/* <Link
+							href="/blog"
+							className="block py-1  hover:text-green-700 transition"
+							onClick={() => setIsMenuOpen(false)}
+						  >
+							Blog
+						  </Link> */}
+						<Link
+							href="/contact"
+							className="block py-1  transition hover:text-green-700"
+							onClick={() => setIsMenuOpen(false)}
+						>
+							Contact
+						</Link>
+
+						<Link
+							href="/cart"
+							className="block py-2  transition hover:text-green-700"
+							onClick={() => setIsMenuOpen(false)}
+						>
+							{" "}
+							Cart
+							{/* Cart ({products.length}) */}
+						</Link>
+						<div className="relative">
+							<div className="" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+								<div
+									onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+									className="text-destructive-foreground   block rounded-md bg-[#646A36] px-2 py-2 text-sm text-white shadow-sm "
+								>
+									Sign In
+								</div>
+								{/* <RiArrowDropDownLine className="h-6 w-6" /> */}
+							</div>
+							{isDropdownOpen && (
+								<div className="absolute  z-50 mt-1 w-40 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+									<Link
+										href="/register"
+										onClick={() => {
+											setIsMenuOpen(false);
+											setIsDropdownOpen(false);
+										}}
+										className="block rounded-t-md px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50"
+									>
+										Sign Up
+									</Link>
+									<Link
+										href="/login"
+										onClick={() => {
+											setIsMenuOpen(false);
+											setIsDropdownOpen(false);
+										}}
+										className="block rounded-b-md px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50"
+									>
+										Sign In
+									</Link>
+								</div>
+							)}
+						</div>
+						{/* <Link href="/login">
+							<Button
+							  variant="destructive"
+							  className="px-2 py-2 text-white rounded-lg"
+							>
+							  Sign In
+							</Button>
+						  </Link> */}
+					</nav>
+				)}
+			</div>
+		</header>
+	);
+}
+
+// import { Logo } from "./Logo";
+// import { Nav } from "./nav/Nav";
+
+// export function Header({ channel }: { channel: string }) {
+// 	return (
+// 		<header className="sticky top-0 z-20 bg-neutral-100/50 backdrop-blur-md">
+// 			<div className="mx-auto max-w-7xl px-3 sm:px-8">
+// 				<div className="flex h-16 justify-between gap-4 md:gap-8">
+// 					<Logo />
+// 					<Nav channel={channel} />
+// 				</div>
+// 			</div>
+// 		</header>
+// 	);
+// }

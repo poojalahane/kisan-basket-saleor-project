@@ -1,0 +1,40 @@
+{
+	// make sure the settings below is not present in either user and
+	// workspace settings so adding ids to messages on save works
+	// "eslint.codeActionsOnSave.rules": [],
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"eslint.run": "onSave",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always"
+	},
+	"tailwindCSS.classAttributes": ["className", "clsx"],
+	"css.validate": true,
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"workbench.colorCustomizations": {
+		"activityBar.activeBackground": "#65c8a0",
+		"activityBar.background": "#65c8a0",
+		"activityBar.foreground": "#15202b",
+		"activityBar.inactiveForeground": "#15202b99",
+		"activityBarBadge.background": "#9a5bc4",
+		"activityBarBadge.foreground": "#e7e7e7",
+		"commandCenter.border": "#15202b99",
+		"sash.hoverBorder": "#65c8a0",
+		"statusBar.background": "#42b888",
+		"statusBar.foreground": "#15202b",
+		"statusBarItem.hoverBackground": "#35926c",
+		"statusBarItem.remoteBackground": "#42b888",
+		"statusBarItem.remoteForeground": "#15202b",
+		"titleBar.activeBackground": "#42b888",
+		"titleBar.activeForeground": "#15202b",
+		"titleBar.inactiveBackground": "#42b88899",
+		"titleBar.inactiveForeground": "#15202b99"
+	},
+	"peacock.color": "#42b888"
+}
