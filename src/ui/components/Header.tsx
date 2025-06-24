@@ -6,8 +6,8 @@ import React, { useState } from "react";
 import Link from "next/Link";
 import { useRouter } from "next/navigation";
 import { RiArrowDropDownLine } from "react-icons/ri";
-// import { FaSearch } from "react-icons/fa";
-
+import { FaSearch } from "react-icons/fa";
+//header
 export function Header({ channel }: { channel: string }) {
 	const router = useRouter();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ export function Header({ channel }: { channel: string }) {
 
 						<div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
 							<Image
-							onClick={() => router.push("/kisan-basket/products")}
+								onClick={() => router.push("/kisan-basket/products")}
 								src="/images/search.svg"
 								alt="kisan basket image"
 								fill
