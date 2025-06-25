@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { Loader } from "@/ui/atoms/Loader";
 import AllCategories from "@/ui/components/category/AllCategories";
 import AllProducts from "@/ui/components/product/AllProducts";
-// import { FeaturedProducts } from "@/ui/components/FeaturedProducts"; // Optional example
+
 import Image from "next/image";
 export default function HomePage() {
 	return (
@@ -12,17 +12,10 @@ export default function HomePage() {
 				<AllCategories />
 				<div className="flex justify-center">
 					<div className="relative h-64 w-64 lg:h-[110px] lg:w-[450px]">
-						<Image
-							src="/images/bestsellerimage.svg" // Make sure this exists in /public/images
-							alt="Kisan Basket"
-							fill
-							className="object-contain"
-						/>
+						<Image src="/images/bestsellerimage.svg" alt="Kisan Basket" fill className="object-contain" />
 					</div>
 				</div>
 				<AllProducts />
-				{/* <FeaturedProducts />  */}
-				{/* Add more homepage sections here */}
 			</main>
 		</Suspense>
 	);
