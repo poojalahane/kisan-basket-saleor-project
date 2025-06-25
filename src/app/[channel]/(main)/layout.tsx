@@ -16,8 +16,10 @@ export default async function RootLayout(props: {
 	return (
 		<>
 			<Header channel={channel} />
-			<div className="flex min-h-[calc(100dvh-64px)] flex-col ">
+
+			<div className="flex min-h-[calc(100dvh-64px)] flex-col bg-[#F3F0F0] ">
 				<main className="flex-1">{props.children}</main>
+
 				<Footer channel={channel} />
 			</div>
 		</>
