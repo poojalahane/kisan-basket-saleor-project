@@ -2,7 +2,6 @@
 import { Suspense } from "react";
 import { Loader } from "@/ui/atoms/Loader";
 import AllCategories from "@/ui/components/category/AllCategories";
-import AllProducts from "@/ui/components/product/AllProducts";
 
 import Image from "next/image";
 export default function HomePage() {
@@ -15,7 +14,6 @@ export default function HomePage() {
 						<Image src="/images/bestsellerimage.svg" alt="Kisan Basket" fill className="object-contain" />
 					</div>
 				</div>
-				<AllProducts />
 			</main>
 		</Suspense>
 	);

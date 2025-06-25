@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { LinkWithChannel } from "../atoms/LinkWithChannel";
@@ -18,7 +17,7 @@ import {
 	FaLeaf,
 } from "react-icons/fa";
 export async function Footer({ channel }: { channel: string }) {
-	const [email, setEmail] = useState("");
+	// const [email, setEmail] = useState("");
 	const footerLinks = await executeGraphQL(MenuGetBySlugDocument, {
 		variables: { slug: "footer", channel },
 		revalidate: 60 * 60 * 24,
@@ -119,7 +118,7 @@ export async function Footer({ channel }: { channel: string }) {
 					<p className="mb-4 text-sm text-gray-300">
 						Subscribe to get updates on fresh produce and special offers.
 					</p>
-					<form className="flex">
+					{/* <form className="flex">
 						<input
 							type="email"
 							value={email}
@@ -132,7 +131,7 @@ export async function Footer({ channel }: { channel: string }) {
 						<button type="submit" className="rounded-r-md bg-green-600 px-4 py-2 text-sm hover:bg-green-700">
 							Subscribe
 						</button>
-					</form>
+					</form> */}
 				</div>
 			</div>
 

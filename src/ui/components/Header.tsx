@@ -31,10 +31,10 @@ export function Header({ channel }: { channel: string }) {
 					</div>
 					<div className="font-inter hidden items-center justify-center text-center text-[15px] font-medium leading-[20px] tracking-[0%] text-[#242424] md:flex md:space-x-4 lg:space-x-8">
 						<Link href="/">Home</Link>
-						<Link href="/aboug">About</Link>
-						<Link href="/market">Market</Link>
-						<Link href="/services">Services</Link>
-						<Link href="/blog">Blog</Link>
+						<Link href="/kisan-basket/about">Shop</Link>
+						<Link href="/kisan-basket/about">About</Link>
+						<Link href="/kisan-basket/services">Services</Link>
+						{/* <Link href="/blog">Blog</Link> */}
 					</div>
 					<div className="hidden items-center md:flex ">
 						{/* <FaSearch /> */}
@@ -99,14 +99,14 @@ export function Header({ channel }: { channel: string }) {
 							Home
 						</Link>
 						<Link
-							href="/shop"
+							href="/kisan-basket/shop"
 							className="block py-1  transition hover:text-green-700"
 							onClick={() => setIsMenuOpen(false)}
 						>
 							Shop
 						</Link>
 						<Link
-							href="/about"
+							href="/kisan-basket/about"
 							className="block py-1  transition hover:text-green-700"
 							onClick={() => setIsMenuOpen(false)}
 						>
