@@ -20,6 +20,7 @@ export default async function RootLayout(props: {
 			<Carousel />
 			<div className="flex min-h-[calc(100dvh-64px)] flex-col">
 				<main className="flex-1">{props.children}</main>
+
 				<Footer channel={channel} />
 			</div>
 		</>

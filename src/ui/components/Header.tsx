@@ -7,7 +7,6 @@ import Link from "next/Link";
 import { useRouter } from "next/navigation";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaSearch } from "react-icons/fa";
-//header
 export function Header({ channel }: { channel: string }) {
 	const router = useRouter();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +14,7 @@ export function Header({ channel }: { channel: string }) {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 	return (
-		<header className="sticky top-0 z-20 bg-neutral-100/50 backdrop-blur-md">
+		<header className="sticky top-0 z-20 bg-neutral-100/50 ">
 			<div className="mx-auto max-w-7xl px-3 sm:px-8">
 				<div className="flex h-16 justify-between gap-4 md:gap-8">
 					<div
