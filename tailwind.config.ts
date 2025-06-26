@@ -5,6 +5,14 @@ import { type Config } from "tailwindcss";
 
 const config: Config = {
 	content: ["./src/**/*.{ts,tsx}"],
+	theme: {
+		extend: {
+			fontFamily: {
+				jua: ["Jua", "sans-serif"],
+				amatica: ["'Amatica SC'", "cursive"],
+			},
+		},
+	},
 	plugins: [TypographyPlugin, FormPlugin, ContainerQueriesPlugin],
 };
 

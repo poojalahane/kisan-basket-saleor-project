@@ -5,11 +5,12 @@ import Image from "next/image";
 export const ProductList = ({ products }: { products: readonly ProductListItemFragment[] }) => {
 	return (
 		<>
-			<div className="flex justify-center">
-				<div className="relative h-64 w-64 lg:mb-6 lg:h-[110px] lg:w-[450px]">
+			<div className="flex justify-center  py-2 md:py-4">
+				<div className="relative aspect-[16/5] w-full max-w-[450px] px-4">
 					<Image src="/images/bestsellerimage.svg" alt="Kisan Basket" fill className="object-contain" />
 				</div>
 			</div>
+
 			<ul
 				role="list"
 				data-testid="ProductList"

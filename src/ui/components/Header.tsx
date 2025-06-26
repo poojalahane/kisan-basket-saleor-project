@@ -29,7 +29,7 @@ export function Header({ channel }: { channel: string }) {
 							style={{ objectFit: "contain" }}
 						/>
 					</div>
-					<div className="font-inter hidden items-center justify-center text-center text-[15px] font-medium leading-[20px] tracking-[0%] text-[#242424] md:flex md:space-x-4 lg:space-x-8">
+					<div className="font-jua hidden items-center justify-center text-center text-[20px] font-normal  leading-[20px] tracking-[0%] text-[#242424] md:flex md:space-x-4 lg:space-x-8">
 						<Link href="/">Home</Link>
 						<Link href="/kisan-basket/shop">Shop</Link>
 						<Link href="/kisan-basket/about">About</Link>

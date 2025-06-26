@@ -6,10 +6,9 @@ interface Category {
 	id: number;
 	name: string;
 	image: string;
-	bgColor: string; // 🎯 Add background color field
+	bgColor: string;
 }
 
-// ✅ Static data with dynamic background colors
 const categories: Category[] = [
 	{
 		id: 1,
@@ -39,11 +38,11 @@ const categories: Category[] = [
 
 const AllCategories = () => {
 	return (
-		<div className="flex flex-wrap justify-center gap-8 py-6">
+		<div className="flex flex-wrap justify-center gap-8 py-2 md:py-4">
 			{categories.map((category) => (
 				<div key={category.id} className="text-center">
 					<div
-						className="relative my-4 h-32 w-32 overflow-hidden rounded-full border-4 border-white"
+						className="relative my-1 h-32 w-32 overflow-hidden rounded-full border-4 border-white md:my-2 lg:my-4"
 						style={{
 							backgroundColor: category.bgColor, // 🎯 Dynamic bg color
 							boxShadow: "8px 4px 4px 0px #5C595940",

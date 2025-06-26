@@ -3,8 +3,7 @@ import { ProductListItemFragment } from "@/gql/graphql";
 import { formatMoneyRange } from "@/lib/utils";
 import Image from "next/image";
 import { FaIndianRupeeSign } from "react-icons/fa6";
-import { FaStar, FaRegStar } from "react-icons/fa";
-// Static images (should be present inside public/images/)
+
 const staticImages = [
 	"/images/category1.svg",
 	"/images/category2.svg",
@@ -53,9 +52,18 @@ export function ProductElement({
 
 						{/* Info Section */}
 						<div className="p-2 pl-6">
-							<h4 className="text-[14px] font-medium capitalize leading-[1.2] text-[#363842] sm:text-lg md:text-[16px]">
-								{product.name}
-							</h4>
+							<div className="group relative w-fit">
+								<h4 className="cursor-default text-[14px] font-medium capitalize leading-[1.2] text-[#363842] sm:text-lg md:text-[20px]">
+									{product.name.length > 20 ? product.name.slice(0, 20) + "..." : product.name}
+								</h4>
+
+								{/* Tooltip shown only if name is longer than 40 characters */}
+								{product.name.length > 20 && (
+									<div className="absolute left-0 top-full z-10 mt-2 hidden w-72 rounded-md bg-[#B4CDCB] p-2 text-sm shadow-md group-hover:block">
+										{product.name}
+									</div>
+								)}
+							</div>
 
 							{/* Category Name */}
 							<p className="mt-1 text-sm text-[#35394C]" data-testid="ProductElement_Category">
@@ -109,9 +117,10 @@ export function ProductElement({
 							className="font-inter m-4 mt-1 flex h-[38px] cursor-pointer items-center justify-center rounded-[10px] bg-[#A9B243] text-[14px] font-semibold leading-[1.2] text-white sm:rounded-[11px] md:text-[20px]"
 							style={{
 								boxShadow: `0px 4px 5.7px 0px #4A454540, inset 0px 5px 4px 0px #6B676740`,
+								textShadow: `0px 4px 4px rgba(0, 0, 0, 0.25)`,
 							}}
 						>
-							<span className="shadow-[0px_4px_4px_0px_#00000040]">ADD TO CART</span>
+							ADD TO CART
 						</div>
 					</div>
 				</div>
