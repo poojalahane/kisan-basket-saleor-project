@@ -30,7 +30,7 @@ export function ProductElement({
 		<li data-testid="ProductElement">
 			<LinkWithChannel href={`/products/${product.slug}`} key={product.id}>
 				<div
-					className="h-[530px] w-full rounded-[310px] bg-white lg:w-[350px]"
+					className="w-full rounded-[310px] bg-white  "
 					style={{
 						borderRadius: "32px",
 						boxShadow: "5px 7px 8.8px 2px #615A5A40",
@@ -52,8 +52,8 @@ export function ProductElement({
 						</div>
 
 						{/* Info Section */}
-						<div className="p-2">
-							<h4 className="text-[14px] font-medium capitalize leading-[1.2] text-[#363842] sm:text-lg md:text-[20px]">
+						<div className="p-2 pl-6">
+							<h4 className="text-[14px] font-medium capitalize leading-[1.2] text-[#363842] sm:text-lg md:text-[16px]">
 								{product.name}
 							</h4>
 
@@ -61,15 +61,31 @@ export function ProductElement({
 							<p className="mt-1 text-sm text-[#35394C]" data-testid="ProductElement_Category">
 								{product.category?.name}
 							</p>
-							{/* star section */}
-							<div className="mt-2 flex items-center space-x-1 text-xs text-[#35394C]">
-								{[...Array(5)].map((_, i) =>
+							{/* star section  */}
+							<div className="mt-1 flex items-center space-x-1 text-xs text-[#35394C]">
+								<div className="flex items-center gap-1">
+									{[...Array(5)].map((_, i) => (
+										<div key={i} className="relative h-3 w-3 sm:h-4 sm:w-4">
+											<Image
+												src="/images/ratingimage.svg"
+												alt="kisan basket rating image"
+												fill
+												style={{
+													objectFit: "contain",
+													opacity: i < staticRating ? 1 : 0.2, // dim unfilled ratings
+												}}
+											/>
+										</div>
+									))}
+								</div>
+
+								{/* {[...Array(5)].map((_, i) =>
 									i < staticRating ? (
 										<FaStar key={i} className="text-xs sm:text-sm" />
 									) : (
 										<FaRegStar key={i} className="text-xs sm:text-sm" />
 									),
-								)}
+								)} */}
 							</div>
 							{/* Original Price (hardcoded) */}
 							<div className="mt-2 flex items-center gap-1 text-sm leading-[1.2] text-[#81859C] line-through sm:text-base">
@@ -78,7 +94,7 @@ export function ProductElement({
 							</div>
 
 							{/* Saleor Price Range */}
-							<div className="mt-2 flex items-center gap-1 text-xl font-semibold text-[#363842] sm:text-2xl">
+							<div className="mt-1 flex items-center gap-1 text-xl font-semibold text-[#363842] lg:text-2xl">
 								{/* <FaIndianRupeeSign /> */}
 								{product?.pricing?.priceRange?.start?.gross
 									? formatMoneyRange({
@@ -87,14 +103,15 @@ export function ProductElement({
 										})
 									: "₹80"}
 							</div>
-
-							{/* Add to Cart Button */}
-							<div
-								style={{ boxShadow: "0px 4px 4px 0px #00000040" }}
-								className="mt-2 flex  cursor-pointer items-center justify-center rounded-[10px] bg-[#A9B243] text-[14px] font-semibold text-white h-[50px] sm:rounded-[11px] md:text-[20px]"
-							>
-								ADD TO CART
-							</div>
+						</div>
+						{/* add to cart section */}
+						<div
+							className="font-inter m-4 mt-1 flex h-[38px] cursor-pointer items-center justify-center rounded-[10px] bg-[#A9B243] text-[14px] font-semibold leading-[1.2] text-white sm:rounded-[11px] md:text-[20px]"
+							style={{
+								boxShadow: `0px 4px 5.7px 0px #4A454540, inset 0px 5px 4px 0px #6B676740`,
+							}}
+						>
+							<span className="shadow-[0px_4px_4px_0px_#00000040]">ADD TO CART</span>
 						</div>
 					</div>
 				</div>
