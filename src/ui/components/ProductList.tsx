@@ -1,7 +1,7 @@
 import { ProductElement } from "./ProductElement";
 import { type ProductListItemFragment } from "@/gql/graphql";
-
 import Image from "next/image";
+
 export const ProductList = ({ products }: { products: readonly ProductListItemFragment[] }) => {
 	return (
 		<>

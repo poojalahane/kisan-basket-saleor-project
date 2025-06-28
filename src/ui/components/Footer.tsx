@@ -1,37 +1,11 @@
-import Link from "next/link";
-import Image from "next/image";
-import { LinkWithChannel } from "../atoms/LinkWithChannel";
-import { ChannelSelect } from "./ChannelSelect";
-import { ChannelsListDocument, MenuGetBySlugDocument } from "@/gql/graphql";
-import { executeGraphQL } from "@/lib/graphql";
-import React, { useState } from "react";
+// components/FooterClient.tsx
+"use client";
 
-import {
-	FaFacebookF,
-	FaTwitter,
-	FaInstagram,
-	FaLinkedin,
-	FaMapMarkerAlt,
-	FaPhoneAlt,
-	FaEnvelope,
-	FaLeaf,
-} from "react-icons/fa";
-export async function Footer({ channel }: { channel: string }) {
-	// const [email, setEmail] = useState("");
-	const footerLinks = await executeGraphQL(MenuGetBySlugDocument, {
-		variables: { slug: "footer", channel },
-		revalidate: 60 * 60 * 24,
-	});
-	const channels = process.env.SALEOR_APP_TOKEN
-		? await executeGraphQL(ChannelsListDocument, {
-				withAuth: false, // disable cookie-based auth for this call
-				headers: {
-					// and use app token instead
-					Authorization: `Bearer ${process.env.SALEOR_APP_TOKEN}`,
-				},
-			})
-		: null;
-	const currentYear = new Date().getFullYear();
+import React, { useState } from "react";
+import { FaFacebookF, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+
+export default function FooterClient({ footerLinks, channels }: any) {
+	const [email, setEmail] = useState("");
 
 	return (
 		<footer className="w-full bg-[#0F172A] px-6 py-4 text-white md:px-16 md:py-10">
@@ -39,7 +13,6 @@ export async function Footer({ channel }: { channel: string }) {
 				{/* Logo & About */}
 				<div>
 					<div className="mb-4 flex items-center space-x-2">
-						{/* <FaLeaf className="text-green-500 text-2xl" /> */}
 						<h2 className="text-xl font-semibold">Kisan Basket</h2>
 					</div>
 					<p className="mb-4 text-sm text-gray-300">
@@ -49,7 +22,6 @@ export async function Footer({ channel }: { channel: string }) {
 						<a href="#" className="hover:text-white">
 							<FaFacebookF />
 						</a>
-
 						<a
 							href="https://www.instagram.com/kisan_basket?igsh=MThtcTh0eWx4Mmo3ZA=="
 							className="hover:text-white"
@@ -95,11 +67,7 @@ export async function Footer({ channel }: { channel: string }) {
 					<ul className="space-y-3 text-sm text-gray-300">
 						<li className="flex items-start space-x-2">
 							<FaMapMarkerAlt className="mt-1" />
-							<span>
-								Office No. 302, 3rd Floor, <br /> 74 Downtown, Baner Road,
-								<br />
-								Baner, Pune-411045
-							</span>
+							<span>Office No. 302, 3rd Floor, 74 Downtown, Baner Road, Baner, Pune-411045</span>
 						</li>
 						<li className="flex items-start space-x-2">
 							<FaPhoneAlt className="mt-1" />
@@ -125,7 +93,6 @@ export async function Footer({ channel }: { channel: string }) {
 							onChange={(e) => setEmail(e.target.value)}
 							placeholder="Your email"
 							className="w-full rounded-l-md px-3 py-2 text-sm text-black focus:outline-none"
-							suppressHydrationWarning
 							required
 						/>
 						<button type="submit" className="rounded-r-md bg-green-600 px-4 py-2 text-sm hover:bg-green-700">
@@ -135,7 +102,6 @@ export async function Footer({ channel }: { channel: string }) {
 				</div>
 			</div>
 
-			{/* Footer Bottom */}
 			<div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
 				© {new Date().getFullYear()} Kisan Basket. All rights reserved.
 			</div>

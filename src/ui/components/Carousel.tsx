@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 
 type MediaItem = {
@@ -10,8 +9,6 @@ type MediaItem = {
 const mediaItems: MediaItem[] = [
 	{ type: "image", src: "/images/image1.png" },
 	{ type: "image", src: "/images/image2.png" },
-
-	// { type: "video", src: "/videos/v1.mp4" },
 	{
 		type: "youtube",
 		src: "https://www.youtube.com/embed/o_CnpEKJuvc?autoplay=1&mute=1&loop=1&playlist=o_CnpEKJuvc",
@@ -19,7 +16,7 @@ const mediaItems: MediaItem[] = [
 ];
 
 const Carousel: React.FC = () => {
-	const [current, setCurrent] = useState<number>(0);
+	const [current, setCurrent] = useState(0);
 
 	const nextSlide = () => {
 		setCurrent((prev) => (prev === mediaItems.length - 1 ? 0 : prev + 1));
@@ -31,11 +28,11 @@ const Carousel: React.FC = () => {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			nextSlide();
+			setCurrent((prev) => (prev === mediaItems.length - 1 ? 0 : prev + 1));
 		}, 6000);
 
 		return () => clearInterval(interval);
-	}, [current]);
+	}, []); // ✅ only run once
 
 	return (
 		<div className="mt-10 flex h-[400px] w-screen items-center justify-center">
@@ -72,7 +69,7 @@ const Carousel: React.FC = () => {
 						);
 					}
 
-					if (item.type === "youtube") {
+					if (item.type === "youtube" && isActive) {
 						return (
 							<iframe
 								key={index}
@@ -92,14 +89,12 @@ const Carousel: React.FC = () => {
 				<button
 					onClick={prevSlide}
 					className="absolute left-4 top-1/2 z-20 w-12 -translate-y-1/2 transform rounded-full bg-black bg-opacity-50 p-3 text-2xl text-white"
-					aria-label="Previous Slide"
 				>
 					❮
 				</button>
 				<button
 					onClick={nextSlide}
 					className="absolute right-4 top-1/2 z-20 w-12 -translate-y-1/2 transform rounded-full bg-black bg-opacity-50 p-3 text-2xl text-white"
-					aria-label="Next Slide"
 				>
 					❯
 				</button>

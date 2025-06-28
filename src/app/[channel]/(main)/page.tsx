@@ -1,6 +1,9 @@
 import AllCategories from "@/ui/components/category/AllCategories";
 import { ProductListingSection } from "@/ui/components/ProductListingSection";
 import ProcessImagesComponent from "@/ui/components/ProcessImagesComponent";
+import Carousel from "@/ui/components/Carousel";
+import ShopPage from "@/ui/components/HomeContent/OutletSection";
+import YouTubeShortsCarousel from "@/ui/components/HomeContent/YoutubeShortsSection";
 
 export default async function HomePage({
 	params,
@@ -10,7 +13,8 @@ export default async function HomePage({
 	searchParams?: { cursor?: string };
 }) {
 	return (
-		<main className="mx-auto">
+		<main className="mx-auto bg-[#F3F0F0]">
+			<Carousel />
 			{/* Categories */}
 			<div className="flex w-full items-center justify-center p-2 md:p-4 lg:p-8">
 				<AllCategories />
@@ -24,10 +28,16 @@ export default async function HomePage({
 				/>
 			</div>
 
+			<div>
+				<YouTubeShortsCarousel />
+			</div>
+
 			{/* Process Steps */}
 			<div>
 				<ProcessImagesComponent />
 			</div>
+
+			<ShopPage />
 		</main>
 	);
 }
