@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ProcessImagesComponent = () => {
 	return (
-		<div className="relative overflow-hidden bg-[#A9BFCB] py-4 md:py-6 lg:py-10">
+		<div className="relative overflow-hidden bg-[#A9BFCB] py-4 md:py-6 lg:pb-20 lg:pt-14">
 			{/* 🍃 Decorative Leaf Images */}
 			<div>
 				{/* Top-left leaf */}
@@ -43,7 +43,7 @@ const ProcessImagesComponent = () => {
 					<div className="relative h-[80px] w-[80px] md:h-[140px] md:w-[140px] lg:h-[220px] lg:w-[220px]">
 						<Image src="/images/farmerimage.svg" alt="Farmer" fill style={{ objectFit: "contain" }} />
 					</div>
-					<h2 className="font-amatica mt-2 text-[20px] font-bold leading-[100%] md:text-[32px] lg:text-[48px]">
+					<h2 className="mt-2 font-amatica text-[20px] font-bold leading-[100%] md:text-[32px] lg:text-[48px]">
 						Farmer
 					</h2>
 				</div>
@@ -58,7 +58,7 @@ const ProcessImagesComponent = () => {
 					<div className="relative h-[80px] w-[80px] md:h-[140px] md:w-[140px] lg:h-[220px] lg:w-[220px]">
 						<Image src="/images/packagingimage.svg" alt="Packaging" fill style={{ objectFit: "contain" }} />
 					</div>
-					<h2 className="font-amatica mt-2 text-[20px] font-bold leading-[100%] md:text-[32px] lg:text-[48px]">
+					<h2 className="mt-2 font-amatica text-[20px] font-bold leading-[100%] md:text-[32px] lg:text-[48px]">
 						Packaging
 					</h2>
 				</div>
@@ -73,7 +73,7 @@ const ProcessImagesComponent = () => {
 					<div className="relative h-[70px] w-[70px] md:h-[120px] md:w-[120px] lg:h-[158px] lg:w-[158px]">
 						<Image src="/images/consumerimage.svg" alt="Consumer" fill style={{ objectFit: "contain" }} />
 					</div>
-					<h2 className="font-amatica mt-2 text-[20px] font-bold leading-[100%] md:text-[32px] lg:mt-12 lg:text-[48px]">
+					<h2 className="mt-2 font-amatica text-[20px] font-bold leading-[100%] md:text-[32px] lg:mt-12 lg:text-[48px]">
 						Consumer
 					</h2>
 				</div>
@@ -81,7 +81,7 @@ const ProcessImagesComponent = () => {
 
 			{/* Description */}
 			<div className="relative z-10 mt-6 flex justify-center px-4 lg:mt-16">
-				<p className="font-amatica max-w-[90%] text-center text-[16px] font-bold leading-[100%] md:text-[20px] lg:max-w-[500px] lg:text-[24px]">
+				<p className="max-w-[90%] text-center font-amatica text-[16px] font-bold leading-[100%] md:text-[20px] lg:max-w-[500px] lg:text-[24px]">
 					Yes you heard it right!!! We supply product directly from farm without processing
 				</p>
 			</div>

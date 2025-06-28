@@ -5,8 +5,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/Link";
 import { useRouter } from "next/navigation";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { FaSearch } from "react-icons/fa";
+
 export function Header({ channel }: { channel: string }) {
 	const router = useRouter();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,12 +28,16 @@ export function Header({ channel }: { channel: string }) {
 							style={{ objectFit: "contain" }}
 						/>
 					</div>
-					<div className="font-jua hidden items-center justify-center text-center text-[20px] font-normal  leading-[20px] tracking-[0%] text-[#242424] md:flex md:space-x-4 lg:space-x-8">
+					<div className="hidden items-center justify-center text-center font-jua text-[20px] font-normal  leading-[20px] tracking-[0%] text-[#242424] md:flex md:space-x-4 lg:space-x-8">
 						<Link href="/">Home</Link>
 						<Link href="/kisan-basket/shop">Shop</Link>
+						{/* <div className="hidden lg:flex">
+							<SearchBar channel={channel} />
+						</div> */}
 						<Link href="/kisan-basket/about">About</Link>
-						<Link href="/kisan-basket/services">Services</Link>
+
 						<Link href="/kisan-basket/products">Products</Link>
+						<Link href="/kisan-basket/contact">Contact Us</Link>
 					</div>
 					<div className="hidden items-center md:flex ">
 						{/* <FaSearch /> */}
@@ -59,11 +62,16 @@ export function Header({ channel }: { channel: string }) {
 						// onClick={() => setIsDropdownOpen(!isDropdownOpen)}
 						>
 							<div
-								onClick={() => router.push("/kisan-basket/login")}
-								className="text-destructive-foreground ml-2  block cursor-pointer rounded-md bg-[#646A36] px-2 py-2 text-sm text-white shadow-sm "
+								className="cursor-pointer "
+								style={{ position: "relative", width: "60px", height: "34px" }}
 							>
-								Sign In
-								{/* <RiArrowDropDownLine className="h-6 w-6" /> */}
+								<Image
+									onClick={() => router.push("/kisan-basket/login")}
+									src="/images/profileicon.svg"
+									alt="kisan basket image"
+									fill
+									style={{ objectFit: "contain" }}
+								/>
 							</div>
 						</div>
 					</div>
