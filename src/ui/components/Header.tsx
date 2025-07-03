@@ -28,16 +28,17 @@ export function Header({ channel }: { channel: string }) {
 							style={{ objectFit: "contain" }}
 						/>
 					</div>
-					<div className="hidden items-center justify-center text-center font-jua text-[20px] font-normal  leading-[20px] tracking-[0%] text-[#242424] md:flex md:space-x-4 lg:space-x-8">
+					<div className="hidden items-center justify-center text-center font-jua text-[16px] font-normal leading-[20px]  tracking-[0%] text-[#242424] md:flex md:space-x-4 lg:space-x-8 lg:text-[20px]">
 						<Link href="/">Home</Link>
+						<Link href="/kisan-basket/about">About</Link>
 						<Link href="/kisan-basket/shop">Shop</Link>
 						{/* <div className="hidden lg:flex">
 							<SearchBar channel={channel} />
 						</div> */}
-						<Link href="/kisan-basket/about">About</Link>
 
-						<Link href="/kisan-basket/products">Products</Link>
-						<Link href="/kisan-basket/contact">Contact Us</Link>
+						<Link href="/kisan-basket/outlet">Outlet</Link>
+						<Link href="/kisan-basket/contact">Contact</Link>
+						<Link href="/kisan-basket/contact">Blog</Link>
 					</div>
 					<div className="hidden items-center md:flex ">
 						{/* <FaSearch /> */}
@@ -98,7 +99,7 @@ export function Header({ channel }: { channel: string }) {
 				</div>
 				{/* Mobile Menu */}
 				{isMenuOpen && (
-					<nav className="text-headerTextColor space-y-2 bg-white px-4 pb-4 font-semibold shadow-md md:hidden">
+					<nav className="text-headerTextColor space-y-2 bg-white px-4 pb-4 font-jua font-normal shadow-md md:hidden">
 						<Link
 							href="/"
 							className="block py-1  transition hover:text-green-700"
@@ -107,32 +108,40 @@ export function Header({ channel }: { channel: string }) {
 							Home
 						</Link>
 						<Link
-							href="/kisan-basket/shop"
-							className="block py-1  transition hover:text-green-700"
-							onClick={() => setIsMenuOpen(false)}
-						>
-							Shop
-						</Link>
-						<Link
 							href="/kisan-basket/about"
 							className="block py-1  transition hover:text-green-700"
 							onClick={() => setIsMenuOpen(false)}
 						>
 							About
 						</Link>
-						{/* <Link
-							href="/blog"
-							className="block py-1  hover:text-green-700 transition"
-							onClick={() => setIsMenuOpen(false)}
-						  >
-							Blog
-						  </Link> */}
 						<Link
-							href="/contact"
+							href="/kisan-basket/shop"
+							className="block py-1  transition hover:text-green-700"
+							onClick={() => setIsMenuOpen(false)}
+						>
+							Shop
+						</Link>
+
+						<Link
+							href="/kisan-basket/outlet"
+							className="block py-1  transition hover:text-green-700"
+							onClick={() => setIsMenuOpen(false)}
+						>
+							Outlet
+						</Link>
+						<Link
+							href="/kisan-basket/contact"
 							className="block py-1  transition hover:text-green-700"
 							onClick={() => setIsMenuOpen(false)}
 						>
 							Contact
+						</Link>
+						<Link
+							href="/kisan-basket/blog"
+							className="block py-1  transition hover:text-green-700"
+							onClick={() => setIsMenuOpen(false)}
+						>
+							Blog
 						</Link>
 
 						<div className="block py-2  transition hover:text-green-700" onClick={() => setIsMenuOpen(false)}>

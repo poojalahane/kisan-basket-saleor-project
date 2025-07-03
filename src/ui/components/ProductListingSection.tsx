@@ -27,7 +27,7 @@ export async function ProductListingSection({ channel, cursor }: Props) {
 	});
 
 	return (
-		<section className="mx-auto max-w-7xl p-8 pb-16">
+		<section className="max-w-7xl lg:p-8 md:p-4 md:pb-8  lg:pb-16 md:mx-auto">
 			<h2 className="sr-only">Product list</h2>
 			<ProductList products={products.edges.map((e) => e.node)} />
 			{/* <Pagination

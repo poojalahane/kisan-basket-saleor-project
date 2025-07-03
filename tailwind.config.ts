@@ -10,6 +10,7 @@ const config: Config = {
 			fontFamily: {
 				jua: ["Jua", "sans-serif"],
 				amatica: ["'Amatica SC'", "cursive"],
+				konkhmer: ['"Konkhmer Sleokchher"', "sans-serif"],
 			},
 		},
 	},
