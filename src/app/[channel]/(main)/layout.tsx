@@ -8,13 +8,13 @@ export const metadata = {
 };
 
 export default async function RootLayout(props: { children: ReactNode; params: { channel: string } }) {
-	const { children, params } = props;
+	const { params } = props;
 
 	return (
 		<>
 			<Header channel={params.channel} />
 			{/* <Carousel /> */}
-			<div className="flex min-h-[calc(100dvh-64px)] flex-col">
+			<div className="no-scrollbar scrollbar-hide flex min-h-[calc(100dvh-64px)] flex-col">
 				<main className="flex-1">{props.children}</main>
 
 				<Footer channel={params.channel} />

@@ -8,27 +8,27 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 const shorts = [
 	{
 		id: "short1",
-		title: "Wear it everyday  ",
+		title: "Wear it everyday",
 		videoId: "ypeCMPvjB1w",
 	},
 	{
 		id: "short2",
-		title: "Elegant Dress ",
+		title: "Elegant Dress",
 		videoId: "ifxuWU7zClA",
 	},
 	{
 		id: "short3",
-		title: "Behind the Scenes  ",
+		title: "Behind the Scenes",
 		videoId: "6B7qMSmuFjE",
 	},
 	{
 		id: "short4",
-		title: "Glam Fashion  ",
+		title: "Glam Fashion",
 		videoId: "Z_kpY5fIkC4",
 	},
 	{
 		id: "short5",
-		title: "Glam Fashion  ",
+		title: "Glam Fashion",
 		videoId: "Z_kpY5fIkC4",
 	},
 ];
@@ -71,16 +71,19 @@ export default function YouTubeShortsCarousel() {
 			<div className="relative">
 				<button
 					onClick={() => scroll("left")}
-					className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#A9B243] p-3 shadow"
+					className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#A9B243] p-2 shadow md:p-3"
 				>
 					<FaChevronLeft />
 				</button>
 
-				<div ref={scrollRef} className="no-scrollbar flex w-full gap-6 overflow-x-auto scroll-smooth px-8">
+				<div
+					ref={scrollRef}
+					className="no-scrollbar flex w-full gap-6 overflow-x-auto scroll-smooth px-5 md:px-8"
+				>
 					{shorts.map((short, index) => (
 						<div
 							key={short.id}
-							className="relative flex-shrink-0 overflow-hidden rounded-xl shadow-md"
+							className="relative flex-shrink-0 overflow-hidden rounded-3xl shadow-md"
 							style={{
 								aspectRatio: "9 / 16",
 								minWidth: "270px",
@@ -99,7 +102,7 @@ export default function YouTubeShortsCarousel() {
 								></iframe>
 							) : (
 								<div
-									className="group relative h-full w-full"
+									className="relative h-full w-full"
 									style={{ boxShadow: "0px -29px 17px 0px #00000075 inset" }}
 								>
 									<img
@@ -109,18 +112,15 @@ export default function YouTubeShortsCarousel() {
 									/>
 									<div className="absolute inset-0 rounded-xl bg-black/30" />
 
-									{/* Bottom Slide-up Overlay */}
-									<div className="absolute inset-x-0 bottom-0 z-10 translate-y-full bg-black/70 p-3 text-white transition-all duration-300 group-hover:translate-y-0">
+									{/*  Square Overlay */}
+									<div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+										<div className="h-[420px] w-[235px] border-2 border-[#cdcaca]" />
+									</div>
+
+									<div className="absolute bottom-0 left-0 right-0 rounded-b-xl bg-gradient-to-t from-black via-[#444638]/70 to-transparent p-3 text-white">
 										<h3 className="text-sm font-semibold">{short.title}</h3>
-										<p className="text-xs text-gray-300">Watch now on YouTube</p>
 									</div>
 
-									{/* Subscribe button */}
-									<div className="absolute right-2 top-2 z-10">
-										<button className="rounded bg-black/70 px-2 py-1 text-xs text-white">Subscribe</button>
-									</div>
-
-									{/* Play Button */}
 									<a
 										href={`https://www.youtube.com/watch?v=${short.videoId}`}
 										target="_blank"
@@ -139,7 +139,7 @@ export default function YouTubeShortsCarousel() {
 
 				<button
 					onClick={() => scroll("right")}
-					className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#A9B243] p-3 shadow"
+					className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#A9B243] p-2 shadow md:p-3"
 				>
 					<FaChevronRight />
 				</button>

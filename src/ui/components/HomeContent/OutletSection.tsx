@@ -132,12 +132,12 @@ export default function ShopPage() {
 					</div>
 
 					{/* Info Card */}
-					<div className="w-full space-y-5 rounded-2xl border border-[#A09898] p-5 text-black sm:w-[90%] sm:p-6 lg:w-[75%]">
-						<h2 className="text-center text-lg font-semibold leading-tight sm:text-left sm:text-xl">
+					<div className="   flex w-full flex-col space-y-5 rounded-2xl border border-[#A09898] p-5 text-black sm:w-[90%] sm:p-6 lg:h-[390px] lg:w-[85%]">
+						<h2 className="ml-12 text-center text-lg font-semibold leading-tight sm:text-left sm:text-xl">
 							{selectedShop.name} {selectedShop.location}
 						</h2>
 
-						<div className="space-y-4">
+						<div className="ml-12 space-y-4">
 							{/* Address */}
 							<div className="flex items-start gap-3 text-sm">
 								<div className="relative h-4 w-4 sm:h-6 sm:w-6">

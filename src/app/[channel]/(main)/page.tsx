@@ -4,7 +4,6 @@ import ProcessImagesComponent from "@/ui/components/ProcessImagesComponent";
 import Carousel from "@/ui/components/Carousel";
 import ShopPage from "@/ui/components/HomeContent/OutletSection";
 import YouTubeShortsCarousel from "@/ui/components/HomeContent/YoutubeShortsSection";
-import Image from "next/image";
 
 export default async function HomePage({
 	params,
@@ -14,26 +13,22 @@ export default async function HomePage({
 	searchParams?: { cursor?: string };
 }) {
 	return (
-		<main className=" bg-[#F3F0F0]">
+		<main
+			className="no-scrollbar mx-auto bg-[#F3F0F0]"
+			style={{ scrollbarWidth: "none", msOverflowStyle: "none", overflowY: "scroll" }}
+		>
 			<Carousel />
 			{/* Categories */}
-			<div className="mx-auto flex w-full items-center justify-center p-2 py-2 md:p-4 md:py-4 lg:p-8">
+			<div className="flex w-full items-center justify-center p-2 md:p-4 lg:p-8">
 				<AllCategories />
 			</div>
 
 			{/* Products */}
-			<div className="mx-auto">
-				<div className="flex justify-center  py-2 md:py-4">
-					<div className="relative aspect-[16/5] w-[220px] md:w-[300px]  max-w-[450px] px-4">
-						<Image src="/images/bestsellerimage.svg" alt="Kisan Basket" fill className="object-contain" />
-					</div>
-				</div>
-				<div className="">
-					<ProductListingSection
+			<div>
+				<ProductListingSection
 					channel={params.channel}
 					cursor={typeof searchParams?.cursor === "string" ? searchParams.cursor : null}
 				/>
-				</div>
 			</div>
 
 			<div>
