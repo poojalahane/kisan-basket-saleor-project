@@ -1,10 +1,13 @@
 import { Inter } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import { Suspense, type ReactNode } from "react";
 import { type Metadata } from "next";
 import { DraftModeNotification } from "@/ui/components/DraftModeNotification";
-
+const sourceSerif = Source_Serif_4({ weight: ["400", "600"], subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({ weight: ["700", "400"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Saleor Storefront example",

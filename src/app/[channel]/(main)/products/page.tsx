@@ -4,9 +4,7 @@ import { executeGraphQL } from "@/lib/graphql";
 import { Pagination } from "@/ui/components/Pagination";
 import { ProductList } from "@/ui/components/ProductList";
 import { ProductsPerPage } from "@/app/config";
-import Carousel from "@/ui/components/Carousel";
-import ShopPage from "@/ui/components/HomeContent/OutletSection";
-import YouTubeShortsCarousel from "@/ui/components/HomeContent/YoutubeShortsSection";
+
 export const metadata = {
 	title: "Products · Saleor Storefront example",
 	description: "All products in Saleor Storefront example",

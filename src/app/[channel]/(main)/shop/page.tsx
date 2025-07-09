@@ -1,13 +1,8 @@
 import Image from "next/image";
-import TextHeading from "@/ui/components/shop/TextHeading";
-import IconText from "@/ui/components/shop/IconText";
-import SectionBox from "@/ui/components/shop/SectionBox";
-import CategoryRow from "@/ui/components/shop/CategoryRow";
-import ValueBox from "@/ui/components/shop/ValueBox";
+
 import { ProductListingSection } from "@/ui/components/ProductListingSection";
 
 import AllCategories from "@/ui/components/category/AllCategories";
-import FilterSidebar from "@/ui/components/shop/FilterSIdebar";
 
 export default async function ShopPage({
 	params,
@@ -16,8 +11,6 @@ export default async function ShopPage({
 	params: { channel: string };
 	searchParams?: { cursor?: string };
 }) {
-	// const [searchTerm, setSearchTerm] = useState("");
-
 	return (
 		<div
 			className="h-auto min-h-[400px] w-full bg-[#F3F0F0]"
@@ -30,7 +23,7 @@ export default async function ShopPage({
 
 			<div className="w-full ">
 				{/* Categories */}
-				<div className="flex w-full items-center justify-center px-2 ">
+				<div className="flex w-full items-center justify-center px-2 lg:pt-8 ">
 					<AllCategories />
 				</div>
 

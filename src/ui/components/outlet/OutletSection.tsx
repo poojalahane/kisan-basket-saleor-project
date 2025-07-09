@@ -21,6 +21,7 @@ const OutletSection = ({
 	sectionImageSrc,
 }: OutletSectionProps): ReactElement => {
 	const isOdd = id % 2 !== 0;
+	const isSpecialOutlet = id === 3;
 
 	return (
 		<div className="my-2 lg:my-2">
@@ -57,15 +58,26 @@ const OutletSection = ({
 				</div>
 			</div>
 			{/* section image */}
-			<div className="relative h-[60px] w-full sm:h-[80px] md:h-[100px] lg:my-4 lg:h-[134px]">
+			<div className="relative lg:my-4">
+				<Image
+					src={sectionImageSrc}
+					alt={`${title} section divider`}
+					layout="responsive"
+					width={1000} // Aspect ratio (not actual rendered size)
+					height={154}
+					className="object-contain sm:h-[80px] md:h-[100px] lg:h-[154px]"
+				/>
+			</div>
+
+			{/* <div className={` relative h-[60px] w-full sm:h-[80px] md:h-[100px] lg:my-4 lg:h-[154px]`}>
 				<Image
 					src={sectionImageSrc}
 					alt={`${title} section divider`}
 					fill
 					style={{ objectFit: "contain" }}
-					className="object-contain"
+					className="object-fit"
 				/>
-			</div>
+			</div> */}
 		</div>
 	);
 };

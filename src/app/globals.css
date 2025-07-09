@@ -13,3 +13,13 @@ body {
 .no-scrollbar::-webkit-scrollbar {
 	display: none;
 }
+
+/* styles/globals.css or global tailwind file */
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+.scrollbar-hide {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}

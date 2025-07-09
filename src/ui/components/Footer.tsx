@@ -8,17 +8,20 @@ export default function FooterClient({ footerLinks, channels }: any) {
 	const [email, setEmail] = useState("");
 
 	return (
-		<footer className="w-full bg-[#0F172A] px-6 py-4 text-white md:px-16 md:py-10">
-			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4">
+		<footer
+			className="w-full bg-[#cdd3d9] px-6 py-4
+		text-[#242424] md:px-16 md:py-10"
+		>
+			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2  text-[#242424] md:grid-cols-4">
 				{/* Logo & About */}
 				<div>
-					<div className="mb-4 flex items-center space-x-2">
+					<div className="mb-4 flex items-center space-x-2 text-[#242424] ">
 						<h2 className="text-xl font-semibold">Kisan Basket</h2>
 					</div>
-					<p className="mb-4 text-sm text-gray-300">
+					<p className="mb-4 text-sm text-[#242424] ">
 						Bringing fresh, quality produce directly from farmers to your doorstep.
 					</p>
-					<div className="flex space-x-4 text-gray-400">
+					<div className="flex space-x-4 text-[#242424] ">
 						<a href="#" className="hover:text-white">
 							<FaFacebookF />
 						</a>
@@ -37,7 +40,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 				{/* Quick Links */}
 				<div>
 					<h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
-					<ul className="space-y-2 text-sm text-gray-300">
+					<ul className="space-y-2 text-sm  ">
 						<li>
 							<a href="/about" className="hover:text-white">
 								About Us
@@ -64,7 +67,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 				{/* Contact Info */}
 				<div>
 					<h3 className="mb-4 text-lg font-semibold">Contact Info</h3>
-					<ul className="space-y-3 text-sm text-gray-300">
+					<ul className="space-y-3 text-sm  ">
 						<li className="flex items-start space-x-2">
 							<FaMapMarkerAlt className="mt-1" />
 							<span>Office No. 302, 3rd Floor, 74 Downtown, Baner Road, Baner, Pune-411045</span>
@@ -83,9 +86,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 				{/* Newsletter */}
 				<div>
 					<h3 className="mb-4 text-lg font-semibold">Newsletter</h3>
-					<p className="mb-4 text-sm text-gray-300">
-						Subscribe to get updates on fresh produce and special offers.
-					</p>
+					<p className="mb-4 text-sm  ">Subscribe to get updates on fresh produce and special offers.</p>
 					{/* <form className="flex">
 						<input
 							type="email"
@@ -102,7 +103,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 				</div>
 			</div>
 
-			<div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
+			<div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm  ">
 				© {new Date().getFullYear()} Kisan Basket. All rights reserved.
 			</div>
 		</footer>

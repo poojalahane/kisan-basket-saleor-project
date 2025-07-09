@@ -1,11 +1,10 @@
-import MainOutletComponent from "@/ui/components/outlet/MainOutletComponent";
+import MainOutlet from "@/ui/components/outlet/MainOutlet";
 import React from "react";
 
 const page = () => {
 	return (
 		<div>
-			
-			<MainOutletComponent />
+			<MainOutlet />
 		</div>
 	);
 };

@@ -11,6 +11,8 @@ const config: Config = {
 				jua: ["Jua", "sans-serif"],
 				amatica: ["'Amatica SC'", "cursive"],
 				konkhmer: ['"Konkhmer Sleokchher"', "sans-serif"],
+				sourceSerif: ['"Source Serif Pro"', "serif"],
+				lato: ["Lato", "sans-serif"],
 			},
 		},
 	},

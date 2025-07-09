@@ -5,6 +5,7 @@ import Carousel from "@/ui/components/Carousel";
 import ShopPage from "@/ui/components/HomeContent/OutletSection";
 import YouTubeShortsCarousel from "@/ui/components/HomeContent/YoutubeShortsSection";
 import Image from "next/image";
+import TestimonialsSection from "@/ui/components/HomeContent/TestimonialsSection";
 
 export default async function HomePage({
 	params,
@@ -14,8 +15,11 @@ export default async function HomePage({
 	searchParams?: { cursor?: string };
 }) {
 	return (
-		<main className=" bg-[#F3F0F0]">
-			<Carousel />
+		<main className=" bg-[#F3F0F0] py-1">
+			<div className="hidden lg:block">
+				<Carousel />
+			</div>
+
 			{/* Categories */}
 			<div className="mx-auto flex w-full items-center justify-center p-2 py-2 md:p-4 md:py-4 lg:p-8">
 				<AllCategories />
@@ -24,15 +28,15 @@ export default async function HomePage({
 			{/* Products */}
 			<div className="mx-auto">
 				<div className="flex justify-center  py-2 md:py-4">
-					<div className="relative aspect-[16/5] w-[220px] md:w-[300px]  max-w-[450px] px-4">
+					<div className="relative aspect-[16/5] w-[220px] px-4  md:w-[300px] lg:w-[450px]">
 						<Image src="/images/bestsellerimage.svg" alt="Kisan Basket" fill className="object-contain" />
 					</div>
 				</div>
 				<div className="">
 					<ProductListingSection
-					channel={params.channel}
-					cursor={typeof searchParams?.cursor === "string" ? searchParams.cursor : null}
-				/>
+						channel={params.channel}
+						cursor={typeof searchParams?.cursor === "string" ? searchParams.cursor : null}
+					/>
 				</div>
 			</div>
 
@@ -46,6 +50,7 @@ export default async function HomePage({
 			</div>
 
 			<ShopPage />
+			<TestimonialsSection />
 		</main>
 	);
 }

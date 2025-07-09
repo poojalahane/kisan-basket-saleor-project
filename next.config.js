@@ -3,7 +3,16 @@ const config = {
 	images: {
 		remotePatterns: [
 			{
-				hostname: "*",
+				protocol: "http",
+				hostname: "localhost",
+				port: "8000",
+				pathname: "/media/**",
+			},
+			{
+				protocol: "http",
+				hostname: "192.168.1.37",
+				port: "8000",
+				pathname: "/media/**",
 			},
 		],
 	},

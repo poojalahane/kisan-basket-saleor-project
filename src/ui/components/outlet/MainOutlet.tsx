@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import ShopPage from "@/ui/components/HomeContent/OutletSection";
+
 import OutletSection from "./OutletSection";
-import OutletList from "@/ui/components/outlets/OutletList";
-const MainOutletComponent = () => {
+import OutletList from "@/ui/components/outlet/OutletList";
+const MainOutlet = () => {
 	const outlets = [
 		{
 			id: 0,
-			imageSrc: "/images/outlet1.svg",
+			imageSrc: "/outletimages/outlet1.svg",
 			title: "Banner Outlet",
 			description:
 				"Nestled in the heart of a bustling tech neighborhood, our Baner outlet is a go-to spot for health-conscious professionals.",
@@ -18,7 +18,7 @@ const MainOutletComponent = () => {
 
 		{
 			id: 1,
-			imageSrc: "/images/outlet1.svg",
+			imageSrc: "/outletimages/outlet1.svg",
 			title: "Downtown Outlet",
 			description:
 				"Located in the city center, this outlet serves busy urban dwellers looking for quick, healthy options.",
@@ -28,7 +28,7 @@ const MainOutletComponent = () => {
 		},
 		{
 			id: 2,
-			imageSrc: "/images/outlet1.svg",
+			imageSrc: "/outletimages/outlet1.svg",
 			title: "Downtown Outlet",
 			description:
 				"Located in the city center, this outlet serves busy urban dwellers looking for quick, healthy options.",
@@ -38,7 +38,7 @@ const MainOutletComponent = () => {
 		},
 		{
 			id: 3,
-			imageSrc: "/images/outlet1.svg",
+			imageSrc: "/outletimages/outlet1.svg",
 			title: "Downtown Outlet",
 			description:
 				"Located in the city center, this outlet serves busy urban dwellers looking for quick, healthy options.",
@@ -50,9 +50,9 @@ const MainOutletComponent = () => {
 	return (
 		<div>
 			{/* title */}
-			<div className="relative h-[80px] w-full  md:h-[150px] lg:h-[260px]">
+			<div className="relative h-[80px] w-full   overflow-hidden md:h-[150px] lg:h-[260px]">
 				<Image
-					src="/images/outlettitleimage.svg"
+					src="/outletimages/outlettitleimage.svg"
 					alt="kisan basket image"
 					fill
 					className="object-contain lg:object-cover"
@@ -67,25 +67,25 @@ const MainOutletComponent = () => {
 			{/* outlet main content */}
 			<div className="bg-[#F1F3F4]">
 				{/* home image */}
-				<div className=" hidden lg:flex lg:justify-end   lg:px-24 lg:py-16">
+				{/* <div className=" hidden lg:flex lg:justify-end   lg:px-24 lg:py-16">
 					<div className="relative  h-[120px]  w-[140px]  md:h-[229px] md:w-[240px] ">
 						<Image
-							src="/images/outlethomeimage.svg"
+							src="/outletimages/outlethomeimage.svg"
 							alt="kisan basket image"
 							fill
 							className="object-contain lg:object-cover"
 						/>
 					</div>
-				</div>
-				{/* shop outlet section */}
-				<div>
-					<ShopPage />
-				</div>
-				{/* <div>
-					<main className="min-h-screen bg-[#EAE6E6] p-4 md:p-10">
-      <OutletList />
-    </main>
 				</div> */}
+				{/* shop outlet section */}
+				{/* <div>
+					<ShopPage />
+				</div> */}
+				<div>
+					<div className=" lg:px-18 bg-[#EAE6E6] p-4 md:px-10 md:py-6 lg:py-10 ">
+						<OutletList />
+					</div>
+				</div>
 			</div>
 			{/* what make unique section  whatmakesuniquetitle.svg */}
 			<div className=" bg-[#F1F3F4]">
@@ -93,7 +93,7 @@ const MainOutletComponent = () => {
 				<div className="flex items-center justify-center">
 					<div className="relative mt-4 h-[50px] w-[250px] md:mt-6 md:h-[74px] md:w-[320px] lg:mb-20 lg:mt-32 lg:h-[100px] lg:w-[700px] ">
 						<Image
-							src="/images/whatmakesuniquetitle.svg"
+							src="/outletimages/whatmakesuniquetitle.svg"
 							alt="From to Table Journey Title"
 							fill
 							style={{ objectFit: "contain" }}
@@ -120,4 +120,4 @@ const MainOutletComponent = () => {
 	);
 };
 
-export default MainOutletComponent;
+export default MainOutlet;

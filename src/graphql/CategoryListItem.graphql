@@ -1,0 +1,14 @@
+query CategoryListItem {
+	categories(first: 10) {
+		totalCount
+		edges {
+			node {
+				id
+				name
+				backgroundImage {
+					url
+				}
+			}
+		}
+	}
+}
