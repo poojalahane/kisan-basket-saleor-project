@@ -33,7 +33,7 @@ const shops: Shop[] = [
 		phone: "9823456789",
 		startTime: "Monday-Saturday 10AM",
 		endTime: "Monday-Saturday 9PM",
-		imageUrl: "/images/baner.jpg",
+		imageUrl: "/images/magarpatta.png",
 	},
 	{
 		id: "hadapsar",
@@ -43,7 +43,7 @@ const shops: Shop[] = [
 		phone: "9845123456",
 		startTime: "Monday-Saturday 9AM",
 		endTime: "Monday-Saturday 8PM",
-		imageUrl: "/images/hadapsar.jpg",
+		imageUrl: "/images/magarpatta.png",
 	},
 	{
 		id: "mulshi",
@@ -53,7 +53,7 @@ const shops: Shop[] = [
 		phone: "9812345678",
 		startTime: "Monday-Sunday 8AM",
 		endTime: "Monday-Sunday 7PM",
-		imageUrl: "/images/mulshi.jpg",
+		imageUrl: "/images/magarpatta.png",
 	},
 ];
 
@@ -62,9 +62,9 @@ export default function ShopPage() {
 	const selectedShop = shops.find((s) => s.id === selectedId)!;
 
 	return (
-		<div className="">
+		<div className="max-w-7xl  md:mx-auto md:py-4  md:pb-8 lg:p-8 lg:pb-16">
 			{/* Title */}
-			<div className="relative z-10 mb-4 flex justify-center pt-4 md:mb-6 lg:mb-10 lg:mt-8">
+			<div className="relative z-10 mb-4 flex justify-center pt-2 md:mb-6 lg:mb-6 lg:mt-1">
 				<div className="relative h-[50px] w-[250px] md:h-[74px] md:w-[320px] lg:h-[88px] lg:w-[565px]">
 					<Image
 						src="/images/exploretheworldimage.svg"

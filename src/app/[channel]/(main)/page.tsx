@@ -15,7 +15,7 @@ export default async function HomePage({
 	searchParams?: { cursor?: string };
 }) {
 	return (
-		<main className=" bg-[#F3F0F0] py-1">
+		<main className=" bg-[#F3F0F0] pb-1">
 			<div className="hidden lg:block">
 				<Carousel />
 			</div>
@@ -45,11 +45,12 @@ export default async function HomePage({
 			</div>
 
 			{/* Process Steps */}
-			<div>
-				<ProcessImagesComponent />
+			<ProcessImagesComponent />
+			<div className="">
+				<ShopPage />
 			</div>
 
-			<ShopPage />
+			<div className=" "></div>
 			<TestimonialsSection />
 		</main>
 	);

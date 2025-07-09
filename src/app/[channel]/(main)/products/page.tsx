@@ -28,6 +28,7 @@ export default async function Page(props: {
 		},
 		revalidate: 60,
 	});
+	console.log(products);
 
 	if (!products) {
 		notFound();

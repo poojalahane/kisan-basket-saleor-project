@@ -35,7 +35,7 @@ const Carousel: React.FC = () => {
 	}, []); // ✅ only run once
 
 	return (
-		<div className="mt-10 flex h-[400px] w-screen items-center justify-center">
+		<div className=" flex h-[530px] w-screen items-center justify-center">
 			<div className="relative h-full w-full overflow-hidden">
 				{mediaItems.map((item, index) => {
 					const isActive = index === current;

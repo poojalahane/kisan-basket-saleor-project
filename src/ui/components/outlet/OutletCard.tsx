@@ -69,7 +69,7 @@ export default function OutletCard() {
 	const outlet = outletData.find((o) => o.name === selectedTab)!;
 
 	return (
-		<div className="w-full px-4 py-6 md:px-8 lg:px-20">
+		<div className="max-w-7xl  md:mx-auto md:p-4  md:pb-8 lg:px-8 lg:pb-8">
 			<section className="flex flex-col gap-6 lg:flex-row">
 				{/* Left Image */}
 				<div className="relative h-[250px] w-full  overflow-hidden rounded-xl shadow-md sm:h-[300px] lg:h-[540px]  lg:w-[40%]">
@@ -83,14 +83,14 @@ export default function OutletCard() {
 				</div>
 
 				{/* Right Content */}
-				<div className="flex flex-col gap-4 lg:w-[60%]">
+				<div className="flex flex-col gap-4 lg:h-[540px] lg:w-[60%]">
 					{/* Tab Buttons */}
 					<div className="flex flex-wrap justify-center gap-3 rounded-[25px] bg-[#F8F5F5] p-3 shadow-md">
 						{outletData.map((o) => (
 							<button
 								key={o.name}
 								onClick={() => setSelectedTab(o.name)}
-								className={`rounded-full px-4 py-2 text-sm font-semibold transition md:text-base lg:text-lg ${
+								className={`rounded-full px-8 py-2 text-sm font-semibold transition md:text-base lg:text-lg ${
 									selectedTab === o.name
 										? "bg-[#A9B243] text-white"
 										: "border border-[#A09898] bg-white text-black"

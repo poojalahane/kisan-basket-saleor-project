@@ -7,65 +7,70 @@ const MainOutlet = () => {
 	const outlets = [
 		{
 			id: 0,
-			imageSrc: "/outletimages/outlet1.svg",
-			title: "Banner Outlet",
+			imageSrc: "/outletimages/coldpressoilimage.jpg",
+			title: "Kisan Basket Cold-Pressed Oils",
 			description:
-				"Nestled in the heart of a bustling tech neighborhood, our Baner outlet is a go-to spot for health-conscious professionals.",
-			bestFor: "On-the-go shoppers, corporate crowd",
-			signatureFeature: "Quick Grab Section",
+				"Kisan Basket Cold-Pressed Oils are naturally extracted using traditional wooden presses, preserving nutrients and rich flavor. Pure, chemical-free, and made from farm-fresh seeds — perfect for healthy everyday cooking",
+			bestFor: "🌿 100% natural, unrefined & chemical-free",
+			signatureFeature: "🪵 Cold-pressed using traditional wooden ghani method",
 			sectionImageSrc: "/images/outletsectionimage1.svg",
 		},
 
 		{
 			id: 1,
-			imageSrc: "/outletimages/outlet1.svg",
-			title: "Downtown Outlet",
+			imageSrc: "/outletimages/aataimage.jpg",
+			title: "Magarpatta OutLet",
 			description:
-				"Located in the city center, this outlet serves busy urban dwellers looking for quick, healthy options.",
-			bestFor: "Urban professionals, students",
-			signatureFeature: "Express Lunch Counter",
+				"Kisan Basket Atta is made from premium, handpicked grains, Maually-ground to retain fiber, nutrients, and natural aroma. Freshly milled in small batches, it's wholesome, soft, and perfect for everyday rotis. Key Highlights:  ",
+			bestFor: "🌾 Maually--ground from high-quality, farm-sourced grains",
+			signatureFeature: "🍞 Rich in fiber, naturally aromatic & chemical-free",
 			sectionImageSrc: "/images/outletsectionimage2.svg",
 		},
 		{
 			id: 2,
-			imageSrc: "/outletimages/outlet1.svg",
-			title: "Downtown Outlet",
+			imageSrc: "/outletimages/vegetablesimage.jpg",
+			title: "Kisan basket vegetables",
 			description:
-				"Located in the city center, this outlet serves busy urban dwellers looking for quick, healthy options.",
-			bestFor: "Urban professionals, students",
-			signatureFeature: "Express Lunch Counter",
+				"Kisan Basket Vegetables are farm-fresh, naturally grown, and delivered straight from the source. Handpicked for quality and taste, our veggies are free from harmful chemicals and full of natural goodness.",
+			bestFor: "🥬 Freshly harvested & locally sourced",
+			signatureFeature: "🚫 No harmful chemicals or artificial ripening",
 			sectionImageSrc: "/images/outletsectionimage3.svg",
 		},
 		{
 			id: 3,
-			imageSrc: "/outletimages/outlet1.svg",
-			title: "Downtown Outlet",
+			imageSrc: "/outletimages/mangoesimage.jpg",
+			title: "kisan basket hapus mangoes",
 			description:
-				"Located in the city center, this outlet serves busy urban dwellers looking for quick, healthy options.",
-			bestFor: "Urban professionals, students",
-			signatureFeature: "Express Lunch Counter",
+				"Kisan Basket Hapus Mangoes are naturally ripened, handpicked from the orchards of Ratnagiri and Devgad.  Juicy, aromatic, and bursting with sweetness — these Alphonso mangoes are the true taste of summer.",
+			bestFor: "🥭 GI-tagged, carbide-free Alphonso mangoes from Ratnagiri & Devgad",
+			signatureFeature: "🍯 Naturally ripened for rich flavor and sweetness",
 			sectionImageSrc: "/images/outletsectionimage4.svg",
+		},
+		{
+			id: 4,
+			imageSrc: "/outletimages/haldiimage.jpg",
+			title: "Kisan basket Organic haldi",
+			description:
+				"Kisan Basket Organic Halad is sourced from the fertile lands of Hingoli/vasmat known for its rich curcumin content and purity.  Sun-dried and stone-ground, it brings vibrant color, earthy aroma, and powerful health benefits to your kitchen.",
+			bestFor: "🌿 Naturally grown in Hingoli/vasmat, rich in curcumin",
+			signatureFeature: "🌞 Sun-dried & stone-ground for maximum potency and flavor",
+			sectionImageSrc: "/images/outletsectionimage1.svg",
 		},
 	];
 	return (
-		<div>
+		<div className="">
 			{/* title */}
-			<div className="relative h-[80px] w-full   overflow-hidden md:h-[150px] lg:h-[260px]">
+			<div className="relative h-[25vh] max-h-[200px] w-full overflow-hidden md:h-[35vh] md:max-h-[280px] lg:h-[60vh] lg:max-h-[500px]">
 				<Image
-					src="/outletimages/outlettitleimage.svg"
+					src="/outletimages/outletbannerimage.jpg"
 					alt="kisan basket image"
 					fill
-					className="object-contain lg:object-cover"
+					className="lg:object-cover"
 				/>
-				<div className="absolute inset-0 z-10 flex items-center lg:ml-32 ">
-					<h1 className="text-custom shadow-custom w-[280px] px-4 font-konkhmer  text-[18px] leading-tight tracking-[0em] text-[#FAF8EF] md:w-[500px] md:px-8 md:text-[30px] lg:w-[700px] lg:px-0 lg:text-[55px]">
-						Step in for health, taste, and trust.
-					</h1>
-				</div>
 			</div>
 
 			{/* outlet main content */}
-			<div className="bg-[#F1F3F4]">
+			<div className="bg-[#E3DFDF]">
 				{/* home image */}
 				{/* <div className=" hidden lg:flex lg:justify-end   lg:px-24 lg:py-16">
 					<div className="relative  h-[120px]  w-[140px]  md:h-[229px] md:w-[240px] ">

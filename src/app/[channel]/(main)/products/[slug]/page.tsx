@@ -37,6 +37,7 @@ export async function generateMetadata(
 
 	const productName = product.seoTitle || product.name;
 	const variantName = product.variants?.find(({ id }) => id === searchParams.variant)?.name;
+	console.log(product);
 	const productNameAndVariant = variantName ? `${productName} - ${variantName}` : productName;
 
 	return {

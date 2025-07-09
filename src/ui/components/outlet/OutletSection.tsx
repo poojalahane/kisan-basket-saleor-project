@@ -26,9 +26,13 @@ const OutletSection = ({
 	return (
 		<div className="my-2 lg:my-2">
 			<div className="mx-auto w-full max-w-7xl px-4 md:px-2 lg:px-4">
-				<div className={`flex flex-col items-center md:flex-row ${isOdd ? "md:flex-row-reverse" : ""}`}>
+				<div
+					className={`flex flex-col items-center md:flex-row md:items-start ${
+						isOdd ? "md:flex-row-reverse" : ""
+					}`}
+				>
 					{/* image - always 40% width */}
-					<div className="mb-2 w-full md:mb-0 md:w-[40%] lg:w-[40%]">
+					<div className="lg:[33%] mb-2  w-full md:mb-0 md:w-[40%] ">
 						<div className="relative h-[200px] w-full sm:h-[300px] md:h-[300px] md:w-[320px] lg:h-[466px] lg:w-[410px]">
 							<Image
 								src={imageSrc}
@@ -41,19 +45,42 @@ const OutletSection = ({
 					</div>
 
 					{/* content - always 60% width */}
-					<div className="w-full px-4 md:w-[60%] md:px-0">
-						<h1 className="font-amatica text-[22px] font-bold leading-[100%] tracking-[0.07em] text-[#389DA8] md:text-[32px] lg:text-[64px]">
+					<div className="w-full  px-4 md:w-[60%] md:px-4 lg:px-0 lg:w-[67%]">
+						<h1 className="font-amatica text-[22px] font-bold leading-[100%] tracking-[0.07em] text-[#389DA8] md:text-[32px] lg:text-[54px]">
 							{title}
 						</h1>
-						<p className="mt-2 font-amatica text-[16px] font-bold leading-[110%] sm:text-[24px] md:mt-6 md:text-[18px] lg:max-w-[660px] lg:text-[32px]">
-							{description}
-						</p>
-						<p className="mt-3 font-amatica text-[16px] font-bold leading-[110%] md:mt-2 md:text-[18px] lg:text-[36px]">
+						<div className="lg:pt-4">
+							<p className="mt-2 font-amatica text-[16px] font-bold leading-[110%] text-black sm:text-[24px] md:mt-6 md:text-[18px] lg:mt-4 lg:max-w-[760px] lg:text-[30px]">
+								{description}
+							</p>
+						</div>
+						{/* key hightlights */}
+						<div className="mt-3 lg:mt-6 lg:pt-4 ">
+							<p className="font-amatica text-[16px]  font-bold leading-[110%] text-black md:mt-2 md:text-[18px]  lg:text-[30px]">
+								KEY HIGHTLIGHTS:
+							</p>
+						</div>
+						<div className="md:mx-2 lg:mx-4 md:mt-2 lg:mt-4 lg:pt-1">
+							<ul className="list-disc pl-5 text-black  ">
+								<li>
+									<p className="mt-3 font-amatica text-[16px] font-bold leading-[110%] md:mt-2 md:text-[18px] lg:text-[30px]">
+										{bestFor}
+									</p>
+								</li>
+								<li>
+									<p className="mt-3 font-amatica text-[16px] font-bold leading-[110%] sm:text-[18px] md:mt-4 lg:text-[30px]">
+										{signatureFeature}
+									</p>
+								</li>
+							</ul>
+						</div>
+
+						{/* <p className="mt-3 font-amatica text-[16px] font-bold leading-[110%] md:mt-2 md:text-[18px] lg:text-[36px]">
 							Best For: {bestFor}
 						</p>
 						<p className="mt-3 font-amatica text-[16px] font-bold leading-[110%] sm:text-[18px] md:mt-4 lg:text-[36px]">
 							Signature Feature: {signatureFeature}
-						</p>
+						</p> */}
 					</div>
 				</div>
 			</div>
