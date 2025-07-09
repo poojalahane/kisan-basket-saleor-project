@@ -17,12 +17,12 @@ const AllCategories = async ({ channel }: { channel: string }) => {
 
 		return (
 			<div className="relative w-full">
-				<div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white to-transparent sm:hidden" />
+				<div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20  sm:hidden" />
 
 				<div className="scrollbar-hide flex w-full gap-4 overflow-x-auto py-4 pl-4 sm:flex-wrap sm:justify-center sm:gap-8 sm:overflow-x-visible sm:py-0 sm:pl-0">
 					{categoryList?.map((category) => (
 						<div key={category.id} className="flex-shrink-0 text-center first:ml-4 sm:first:ml-0">
-							<div className="relative h-24 w-24 overflow-hidden rounded-full border-white bg-gray-100 sm:my-1 sm:h-32 sm:w-32 md:my-2 lg:my-4">
+							<div className="relative h-24 w-24 overflow-hidden rounded-full  bg-gray-100 sm:my-1 sm:h-32 sm:w-32 md:my-2 lg:my-4">
 								<div className="absolute inset-2">
 									{category.backgroundImage?.url ? (
 										<Image

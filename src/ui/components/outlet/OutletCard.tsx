@@ -91,9 +91,7 @@ export default function OutletCard() {
 								key={o.name}
 								onClick={() => setSelectedTab(o.name)}
 								className={`rounded-full px-8 py-2 text-sm font-semibold transition md:text-base lg:text-lg ${
-									selectedTab === o.name
-										? "bg-[#A9B243] text-white"
-										: "border border-[#A09898] bg-white text-black"
+									selectedTab === o.name ? "bg-[#A9B243] text-white" : "border border-[#A09898]  text-black"
 								}`}
 							>
 								{o.name}
