@@ -45,7 +45,7 @@ const OutletSection = ({
 					</div>
 
 					{/* content - always 60% width */}
-					<div className="w-full  px-4 md:w-[60%] md:px-4 lg:px-0 lg:w-[67%]">
+					<div className="w-full  px-4 md:w-[60%] md:px-4 lg:w-[67%] lg:px-0">
 						<h1 className="font-amatica text-[22px] font-bold leading-[100%] tracking-[0.07em] text-[#389DA8] md:text-[32px] lg:text-[54px]">
 							{title}
 						</h1>
@@ -60,7 +60,7 @@ const OutletSection = ({
 								KEY HIGHTLIGHTS:
 							</p>
 						</div>
-						<div className="md:mx-2 lg:mx-4 md:mt-2 lg:mt-4 lg:pt-1">
+						<div className="md:mx-2 md:mt-2 lg:mx-4 lg:mt-4 lg:pt-1">
 							<ul className="list-disc pl-5 text-black  ">
 								<li>
 									<p className="mt-3 font-amatica text-[16px] font-bold leading-[110%] md:mt-2 md:text-[18px] lg:text-[30px]">
@@ -86,14 +86,16 @@ const OutletSection = ({
 			</div>
 			{/* section image */}
 			<div className="relative lg:my-4">
-				<Image
-					src={sectionImageSrc}
-					alt={`${title} section divider`}
-					layout="responsive"
-					width={1000} // Aspect ratio (not actual rendered size)
-					height={154}
-					className="object-contain sm:h-[80px] md:h-[100px] lg:h-[154px]"
-				/>
+				{sectionImageSrc && (
+					<Image
+						src={sectionImageSrc}
+						alt={`${title} section divider`}
+						layout="responsive"
+						width={1000} // Aspect ratio (not actual rendered size)
+						height={154}
+						className="object-contain sm:h-[80px] md:h-[100px] lg:h-[154px]"
+					/>
+				)}
 			</div>
 
 			{/* <div className={` relative h-[60px] w-full sm:h-[80px] md:h-[100px] lg:my-4 lg:h-[154px]`}>

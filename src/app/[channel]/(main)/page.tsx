@@ -6,7 +6,7 @@ import ShopPage from "@/ui/components/HomeContent/OutletSection";
 import YouTubeShortsCarousel from "@/ui/components/HomeContent/YoutubeShortsSection";
 import Image from "next/image";
 import TestimonialsSection from "@/ui/components/HomeContent/TestimonialsSection";
-
+import CustomerFeedback from "@/ui/components/HomeContent/CustomerFeedback";
 export default async function HomePage({
 	params,
 	searchParams,
@@ -14,6 +14,7 @@ export default async function HomePage({
 	params: { channel: string };
 	searchParams?: { cursor?: string };
 }) {
+	const channel = params.channel;
 	return (
 		<main className=" bg-[#F3F0F0] pb-1">
 			<div className="hidden lg:block">
@@ -22,7 +23,7 @@ export default async function HomePage({
 
 			{/* Categories */}
 			<div className="mx-auto flex w-full items-center justify-center p-2 py-2 md:p-4 md:py-4 lg:p-8">
-				<AllCategories />
+				<AllCategories channel={channel} />
 			</div>
 
 			{/* Products */}
@@ -51,7 +52,7 @@ export default async function HomePage({
 			</div>
 
 			<div className=" "></div>
-			<TestimonialsSection />
+			<CustomerFeedback />
 		</main>
 	);
 }

@@ -10,7 +10,7 @@ const config = {
 			},
 			{
 				protocol: "http",
-				hostname: "192.168.1.37",
+				hostname: "192.168.1.39",
 				port: "8000",
 				pathname: "/media/**",
 			},

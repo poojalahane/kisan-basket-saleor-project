@@ -54,7 +54,6 @@ const MainOutlet = () => {
 				"Kisan Basket Organic Halad is sourced from the fertile lands of Hingoli/vasmat known for its rich curcumin content and purity.  Sun-dried and stone-ground, it brings vibrant color, earthy aroma, and powerful health benefits to your kitchen.",
 			bestFor: "🌿 Naturally grown in Hingoli/vasmat, rich in curcumin",
 			signatureFeature: "🌞 Sun-dried & stone-ground for maximum potency and flavor",
-			sectionImageSrc: "/images/outletsectionimage1.svg",
 		},
 	];
 	return (

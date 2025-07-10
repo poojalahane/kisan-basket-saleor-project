@@ -13,7 +13,7 @@ const AllCategories = async ({ channel }: { channel: string }) => {
 		});
 
 		const categoryList = categories?.edges.map((e) => e.node);
-		console.log("GraphQL Document:", CategoryListItemDocument?.toString?.());
+		//console.log("GraphQL Document:", CategoryListItemDocument?.toString?.());
 
 		return (
 			<div className="relative w-full">
@@ -22,7 +22,7 @@ const AllCategories = async ({ channel }: { channel: string }) => {
 				<div className="scrollbar-hide flex w-full gap-4 overflow-x-auto py-4 pl-4 sm:flex-wrap sm:justify-center sm:gap-8 sm:overflow-x-visible sm:py-0 sm:pl-0">
 					{categoryList?.map((category) => (
 						<div key={category.id} className="flex-shrink-0 text-center first:ml-4 sm:first:ml-0">
-							<div className="relative h-24 w-24 overflow-hidden rounded-full  bg-gray-100 sm:my-1 sm:h-32 sm:w-32 md:my-2 lg:my-4">
+							<div className="relative h-24 w-24 overflow-hidden rounded-full bg-gray-100 sm:my-1  sm:h-32 sm:w-32 md:my-2 lg:my-4 lg:h-28 lg:w-28">
 								<div className="absolute inset-2">
 									{category.backgroundImage?.url ? (
 										<Image
