@@ -5,7 +5,7 @@ import Carousel from "@/ui/components/Carousel";
 import ShopPage from "@/ui/components/HomeContent/OutletSection";
 import YouTubeShortsCarousel from "@/ui/components/HomeContent/YoutubeShortsSection";
 import Image from "next/image";
-import TestimonialsSection from "@/ui/components/HomeContent/TestimonialsSection";
+
 import CustomerFeedback from "@/ui/components/HomeContent/CustomerFeedback";
 export default async function HomePage({
 	params,
@@ -16,7 +16,7 @@ export default async function HomePage({
 }) {
 	const channel = params.channel;
 	return (
-		<main className=" bg-[#F3F0F0] pb-1">
+		<main className=" bg-[#F3F0F0] ">
 			<div className="hidden lg:block">
 				<Carousel />
 			</div>
