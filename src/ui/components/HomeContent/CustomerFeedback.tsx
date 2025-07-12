@@ -1,8 +1,17 @@
 import Image from "next/image";
 
 export default function CustomerFeedback() {
+	// customer-feeback-backgroundimage.png
 	return (
-		<div className="w-full bg-[#E9D2AC] px-4 py-6 md:px-6 lg:px-12 lg:py-10">
+		<div className="relative w-full overflow-hidden bg-[#E9D2AC] px-4 py-6 md:px-6 lg:px-12 lg:py-10">
+			{/* background image */}
+			<Image
+				src="/customer-feedbackimages/customerFeedbaclBackgroundimage.png"
+				alt="Hero Background"
+				fill
+				className="object-cover opacity-20"
+				priority
+			/>
 			<div className="mx-auto flex  max-w-7xl flex-col  items-center  gap-6 md:justify-center lg:flex-row ">
 				{/* Right Section (Image with decorations) */}
 				<div className="relative flex justify-center md:w-[440px] lg:w-[490px]">
@@ -28,13 +37,13 @@ export default function CustomerFeedback() {
 						height={100}
 						className="absolute -bottom-3 -left-3 z-20 hidden md:h-[200px] md:w-[120px] lg:h-[237px] lg:w-[158px]"
 					/>
-					<Image
+					{/* <Image
 						src="/customer-feedbackimages/capsicumimage.svg"
 						alt="Bottom Far Left"
 						width={120}
 						height={120}
 						className="-left-34 absolute -bottom-16 z-20 hidden md:block  md:h-[180px] md:w-[180px] lg:h-[226px] lg:w-[226px]"
-					/>
+					/> */}
 					<Image
 						src="/customer-feedbackimages/mangoimage.svg"
 						alt="Top Right"
@@ -79,7 +88,7 @@ export default function CustomerFeedback() {
 						</h2>
 
 						{/* Stars */}
-						<div className="mb-10 flex justify-center sm:mb-12 md:mb-14 lg:mb-16 lg:justify-start">
+						<div className="mb-10 flex justify-center sm:mb-12 md:mb-8 lg:mb-8 lg:justify-start">
 							<div className="flex space-x-1 text-[#314F2B]">
 								{Array.from({ length: 5 }).map((_, i) => (
 									<Image
@@ -96,8 +105,8 @@ export default function CustomerFeedback() {
 					</div>
 
 					{/* Feedback Box */}
-					<div className="mx-auto w-full max-w-md rounded-[16px] bg-[#FFF1E1] px-4 py-4 sm:max-w-lg md:max-w-md lg:w-[400px]">
-						<p className="font-inter text-[14px] font-medium leading-[22px] text-[#335537] sm:text-[15px] sm:leading-[24px] md:text-[16px] md:leading-[26px] lg:text-[18px] lg:leading-[28px]">
+					<div className="mx-auto w-full max-w-md rounded-[16px] bg-[#FFF1E1] px-4 py-4 sm:max-w-lg md:max-w-md lg:w-[519.45px]  lg:rounded-[25px] lg:px-6 lg:py-4">
+						<p className="font-inter text-[14px] font-medium leading-[22px] text-[#335537] sm:text-[15px] sm:leading-[24px] md:text-[18px] md:leading-[28px] lg:text-[30px] lg:leading-[40px] ">
 							Every product from Kisan Basket reflects our promise of purity, freshness, and honesty — and
 							that’s why our users keep coming back.
 						</p>
@@ -108,6 +117,7 @@ export default function CustomerFeedback() {
 	);
 }
 
+//! original code
 // import Image from "next/image";
 
 // export default function CustomerFeedback() {

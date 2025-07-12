@@ -7,7 +7,7 @@ const MainOutlet = () => {
 	const outlets = [
 		{
 			id: 0,
-			imageSrc: "/outletimages/coldpressoilimage.jpg",
+			imageSrc: "/outletimages/coldpressoilimage.svg",
 			title: "Kisan Basket Cold-Pressed Oils",
 			description:
 				"Kisan Basket Cold-Pressed Oils are naturally extracted using traditional wooden presses, preserving nutrients and rich flavor. Pure, chemical-free, and made from farm-fresh seeds — perfect for healthy everyday cooking",
@@ -18,7 +18,7 @@ const MainOutlet = () => {
 
 		{
 			id: 1,
-			imageSrc: "/outletimages/aataimage.jpg",
+			imageSrc: "/outletimages/aataimageoutlet.svg",
 			title: "Magarpatta OutLet",
 			description:
 				"Kisan Basket Atta is made from premium, handpicked grains, Maually-ground to retain fiber, nutrients, and natural aroma. Freshly milled in small batches, it's wholesome, soft, and perfect for everyday rotis. Key Highlights:  ",
@@ -28,7 +28,7 @@ const MainOutlet = () => {
 		},
 		{
 			id: 2,
-			imageSrc: "/outletimages/vegetablesimage.jpg",
+			imageSrc: "/outletimages/vegetablesimage.svg",
 			title: "Kisan basket vegetables",
 			description:
 				"Kisan Basket Vegetables are farm-fresh, naturally grown, and delivered straight from the source. Handpicked for quality and taste, our veggies are free from harmful chemicals and full of natural goodness.",
@@ -38,20 +38,20 @@ const MainOutlet = () => {
 		},
 		{
 			id: 3,
-			imageSrc: "/outletimages/mangoesimage.jpg",
+			imageSrc: "/outletimages/mangoesimage.svg",
 			title: "kisan basket hapus mangoes",
 			description:
-				"Kisan Basket Hapus Mangoes are naturally ripened, handpicked from the orchards of Ratnagiri and Devgad.  Juicy, aromatic, and bursting with sweetness — these Alphonso mangoes are the true taste of summer.",
+				"Kisan Basket Hapus Mangoes are naturally ripened, handpicked from the orchards of Ratnagiri and Devgad. Juicy, aromatic, and bursting with sweetness — these Alphonso mangoes are the true taste of summer.",
 			bestFor: "🥭 GI-tagged, carbide-free Alphonso mangoes from Ratnagiri & Devgad",
 			signatureFeature: "🍯 Naturally ripened for rich flavor and sweetness",
 			sectionImageSrc: "/images/outletsectionimage4.svg",
 		},
 		{
 			id: 4,
-			imageSrc: "/outletimages/haldiimage.jpg",
+			imageSrc: "/outletimages/haldiimage.svg",
 			title: "Kisan basket Organic haldi",
 			description:
-				"Kisan Basket Organic Halad is sourced from the fertile lands of Hingoli/vasmat known for its rich curcumin content and purity.  Sun-dried and stone-ground, it brings vibrant color, earthy aroma, and powerful health benefits to your kitchen.",
+				"Kisan Basket Organic Halad is sourced from the fertile lands of Hingoli/vasmat known for its rich curcumin content and purity. Sun-dried and stone-ground, it brings vibrant color, earthy aroma, and powerful health benefits to your kitchen.",
 			bestFor: "🌿 Naturally grown in Hingoli/vasmat, rich in curcumin",
 			signatureFeature: "🌞 Sun-dried & stone-ground for maximum potency and flavor",
 		},
@@ -105,7 +105,7 @@ const MainOutlet = () => {
 					</div>
 				</div>
 
-				<div>
+				<div className=" ">
 					{outlets.map((outlet) => (
 						<OutletSection
 							key={outlet.id}

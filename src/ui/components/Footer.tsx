@@ -12,7 +12,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 			className="w-full bg-[#cdd3d9] px-6 py-4
 		text-[#242424] md:px-16 md:py-10"
 		>
-			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 sm:grid-cols-2  text-[#242424] md:grid-cols-4">
+			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 text-[#242424]  sm:grid-cols-2 md:grid-cols-4">
 				{/* Logo & About */}
 				<div>
 					<div className="mb-4 flex items-center space-x-2 text-[#242424] ">
@@ -23,16 +23,16 @@ export default function FooterClient({ footerLinks, channels }: any) {
 					</p>
 					<div className="flex space-x-4 text-[#242424] ">
 						<a href="#" className="hover:text-white">
-							<FaFacebookF />
+							<FaFacebookF className="h-6 w-6" />
 						</a>
 						<a
 							href="https://www.instagram.com/kisan_basket?igsh=MThtcTh0eWx4Mmo3ZA=="
 							className="hover:text-white"
 						>
-							<FaInstagram />
+							<FaInstagram className="h-6 w-6" />
 						</a>
 						<a href="#" className="hover:text-white">
-							<FaLinkedin />
+							<FaLinkedin className="h-6 w-6" />
 						</a>
 					</div>
 				</div>
@@ -69,15 +69,15 @@ export default function FooterClient({ footerLinks, channels }: any) {
 					<h3 className="mb-4 text-lg font-semibold">Contact Info</h3>
 					<ul className="space-y-3 text-sm  ">
 						<li className="flex items-start space-x-2">
-							<FaMapMarkerAlt className="mt-1" />
+							<FaMapMarkerAlt className="mt-1 h-6 w-6" />
 							<span>Office No. 302, 3rd Floor, 74 Downtown, Baner Road, Baner, Pune-411045</span>
 						</li>
 						<li className="flex items-start space-x-2">
-							<FaPhoneAlt className="mt-1" />
+							<FaPhoneAlt className="mt-1 " />
 							<span>+919730752125</span>
 						</li>
 						<li className="flex items-start space-x-2">
-							<FaEnvelope className="mt-1" />
+							<FaEnvelope className="mt-1 " />
 							<span>info@kisanbasket.com</span>
 						</li>
 					</ul>

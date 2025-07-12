@@ -12,6 +12,7 @@ export default async function ShopPage({
 	params: { channel: string };
 	searchParams?: { cursor?: string };
 }) {
+	const channel = params.channel;
 	return (
 		<div
 			className="h-auto min-h-[400px] w-full bg-[#F3F0F0]"
@@ -24,7 +25,7 @@ export default async function ShopPage({
 
 			<div className="w-full ">
 				{/* Category wise products*/}
-				{/* <CategoryWiseProducts channel={params.channel} /> */}
+				<CategoryWiseProducts channel={params.channel} />
 			</div>
 		</div>
 	);

@@ -21,11 +21,10 @@ const OutletSection = ({
 	sectionImageSrc,
 }: OutletSectionProps): ReactElement => {
 	const isOdd = id % 2 !== 0;
-	const isSpecialOutlet = id === 3;
 
 	return (
-		<div className="my-2 lg:my-2">
-			<div className="mx-auto w-full max-w-7xl px-4 md:px-2 lg:px-4">
+		<div className="mb-1 mt-2  pb-2 lg:my-2">
+			<div className="mx-auto w-full max-w-7xl px-4 md:px-2 lg:px-0 lg:pl-8">
 				<div
 					className={`flex flex-col items-center md:flex-row md:items-start ${
 						isOdd ? "md:flex-row-reverse" : ""
@@ -85,7 +84,7 @@ const OutletSection = ({
 				</div>
 			</div>
 			{/* section image */}
-			<div className="relative lg:my-4">
+			<div className="relative lg:my-4 lg:pr-8">
 				{sectionImageSrc && (
 					<Image
 						src={sectionImageSrc}

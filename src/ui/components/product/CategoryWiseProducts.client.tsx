@@ -1,47 +1,98 @@
-
-
 "use client";
 
 import { ProductListFragment, CategoryListItemFragment } from "@/gql/graphql";
 import { useState } from "react";
 import { ProductList } from "@/ui/components/ProductList";
-
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
+import { ProductListingSection } from "@/ui/components/ProductListingSection";
 interface CategoryWithProducts extends CategoryListItemFragment {
 	products: ProductListFragment[];
 }
 
-export default function CategoryWiseProductsClient({
-	categories,
-}: {
-	categories: CategoryWithProducts[];
-}) {
+export default function CategoryWiseProductsClient({ categories }: { categories: CategoryWithProducts[] }) {
 	const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+	const [loading, setLoading] = useState(false);
+	const [delayedSlug, setDelayedSlug] = useState<string | null>(null);
+	const selectedCategory = categories.find((cat) => cat.slug === delayedSlug);
 
-	const selectedCategory = categories.find((cat) => cat.slug === selectedSlug);
-
+	useEffect(() => {
+		if (selectedSlug !== null) {
+			setLoading(true);
+			const timeout = setTimeout(() => {
+				setDelayedSlug(selectedSlug);
+				setLoading(false);
+			}, 1000);
+			return () => clearTimeout(timeout);
+		}
+	}, [selectedSlug]);
 	return (
-		<div className="max-w-7xl mx-auto px-4 py-8">
-			<div className="flex flex-wrap gap-4 mb-6">
-				{categories.map((category) => (
-					<button
-						key={category.id}
-						onClick={() => setSelectedSlug(category.slug)}
-						className={`px-4 py-2 border rounded ${
-							selectedSlug === category.slug ? "bg-green-600 text-white" : "bg-white"
-						}`}
-					>
-						{category.name}
-					</button>
-				))}
+		<div className="mx-auto h-auto max-w-7xl px-4 py-8 lg:px-6">
+			{/* breadcrum */}
+			<div className="lg:px-4">
+				<nav className="text-sm text-gray-600">
+					<span>
+						<Link href="/" className="hover:text-black">
+							Home
+						</Link>
+					</span>
+					<span className="mx-2">{">"}</span>
+					{selectedCategory ? (
+						<span className="font-medium text-gray-900">{selectedCategory.name}</span>
+					) : (
+						<span className="text-gray-700">All Products</span>
+					)}
+				</nav>
 			</div>
 
-			{selectedCategory ? (
-				<div>
-					<h2 className="text-2xl font-semibold mb-4">{selectedCategory.name}</h2>
-					<ProductList products={selectedCategory.products} />
+			{/* all cateogires */}
+			<div className="scrollbar-hide flex w-full gap-4 overflow-x-auto py-4 pl-4 sm:flex-wrap sm:justify-center sm:gap-2 sm:overflow-x-visible sm:py-0 sm:pl-0 md:gap-4 md:pl-0 lg:gap-8">
+				{categories.map((category) => (
+					<div
+						key={category.id}
+						onClick={() => setSelectedSlug(category.slug)}
+						className={`rounded   ${selectedSlug === category.slug ? "bg-gree-600 text-whit" : "bg-whit"}`}
+					>
+						<div className="relative h-24 w-24 cursor-pointer  overflow-hidden rounded-full bg-gray-100 sm:my-1   md:my-2 lg:my-4 lg:h-32 lg:w-32">
+							<div className="absolute inset-2">
+								{category.backgroundImage?.url ? (
+									<Image
+										src={category.backgroundImage.url}
+										alt={category.name}
+										fill
+										className="object-contain"
+									/>
+								) : (
+									<div className="flex h-full items-center justify-center text-xs">No Image</div>
+								)}
+							</div>
+						</div>
+						<p className="mt-2 text-sm font-medium sm:text-lg">{category.name}</p>
+					</div>
+				))}
+			</div>
+			{/* category wise all products */}
+
+			{loading ? (
+				<div className="pt-4 md:pt-6 lg:pt-8">
+					<div className="flex items-center justify-center space-x-2">
+						<div className="h-5 w-5 animate-spin rounded-full border-2 border-green-600 border-t-transparent"></div>
+						<span className="text-gray-500">Loading products...</span>
+					</div>
 				</div>
 			) : (
-				<p className="text-gray-500">Please select a category to view products.</p>
+				<div className="">
+					{selectedCategory ? (
+						<div className="my-4  md:my-6 lg:pt-12">
+							<ProductList products={selectedCategory.products} />
+						</div>
+					) : (
+						<div className="my-4 md:my-6 lg:pt-12">
+							{/* <ProductListingSection /> */}all products
+						</div>
+					)}
+				</div>
 			)}
 		</div>
 	);
@@ -49,97 +100,75 @@ export default function CategoryWiseProductsClient({
 
 // "use client";
 
-// import { useState, useEffect } from "react";
-// import Image from "next/image";
+// import { ProductListFragment, CategoryListItemFragment } from "@/gql/graphql";
+// import { useState } from "react";
 // import { ProductList } from "@/ui/components/ProductList";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useEffect } from "react";
 
-// interface Category {
-// 	id: string;
-// 	name: string;
-// 	slug: string;
-// 	backgroundImage?: {
-// 		url: string;
-// 	};
+// interface CategoryWithProducts extends CategoryListItemFragment {
+// 	products: ProductListFragment[];
 // }
 
-// const CategoryWiseProductsClient = ({ categories, channel }: { categories: Category[]; channel: string }) => {
-// 	const [selectedSlug, setSelectedSlug] = useState<string>(categories[0]?.slug || "");
-// 	const [selectedCategoryName, setSelectedCategoryName] = useState<string>(categories[0]?.name || "");
-// 	const [products, setProducts] = useState<any[]>([]);
-// 	const [loading, setLoading] = useState<boolean>(false);
+// export default function CategoryWiseProductsClient({ categories }: { categories: CategoryWithProducts[] }) {
+// 	const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
 
-// 	useEffect(() => {
-// 		const fetchProducts = async () => {
-// 			if (!selectedSlug) return;
-// 			setLoading(true);
-// 			try {
-// 				const res = await fetch(`/api/product?slug=${selectedSlug}&channel=${channel}`);
-// 				const data = await res.json();
-
-// 				if (data?.category?.products?.edges) {
-// 					setProducts(data.category.products.edges.map((e: any) => e.node));
-// 				} else {
-// 					setProducts([]);
-// 				}
-// 			} catch (error) {
-// 				console.error("Client fetch error:", error);
-// 				setProducts([]);
-// 			} finally {
-// 				setLoading(false);
-// 			}
-// 		};
-
-// 		fetchProducts();
-// 	}, [selectedSlug, channel]);
+// 	const selectedCategory = categories.find((cat) => cat.slug === selectedSlug);
 
 // 	return (
-// 		<div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center">
-// 			{/* Category list */}
-// 			<div className="scrollbar-hide flex w-full gap-4 overflow-x-auto py-4 pl-4 sm:flex-wrap sm:justify-center sm:gap-8 sm:overflow-x-visible sm:py-0 sm:pl-0">
-// 				{categories.map((category) => (
-// 					<button
-// 						key={category.id}
-// 						onClick={() => {
-// 							setSelectedSlug(category.slug);
-// 							setSelectedCategoryName(category.name);
-// 						}}
-// 						className={`flex-shrink-0 text-center focus:outline-none ${
-// 							category.slug === selectedSlug ? "opacity-100" : "opacity-60"
-// 						}`}
-// 					>
-// 						<div className="relative h-24 w-24 overflow-hidden rounded-full bg-gray-100 sm:h-32 sm:w-32">
-// 							{category.backgroundImage?.url ? (
-// 								<Image
-// 									src={category.backgroundImage.url}
-// 									alt={category.name}
-// 									fill
-// 									className="object-contain"
-// 								/>
-// 							) : (
-// 								<div className="flex h-full items-center justify-center text-xs">No Image</div>
-// 							)}
-// 						</div>
-// 						<p className="mt-2 text-sm font-medium sm:text-lg">{category.name}</p>
-// 					</button>
-// 				))}
+// 		<div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
+// 			{/* breadcrum */}
+// 			<div className="lg:px-4">
+// 				<nav className="text-sm text-gray-600">
+// 					<span>
+// 						<Link href="/" className="hover:text-black">
+// 							Home
+// 						</Link>
+// 					</span>
+// 					<span className="mx-2">{">"}</span>
+// 					{selectedCategory ? (
+// 						<span className="font-medium text-gray-900">{selectedCategory.name}</span>
+// 					) : (
+// 						<span className="text-gray-700">All Products</span>
+// 					)}
+// 				</nav>
 // 			</div>
 
-// 			{/* Product list */}
-// 			{selectedSlug && (
-// 				<div className="mx-auto w-full max-w-7xl p-6 pb-16">
-// 					<h2 className="pb-6 text-lg font-semibold text-gray-800">
-// 						{loading
-// 							? "Loading..."
-// 							: products.length > 0
-// 								? `Products in ${selectedCategoryName}`
-// 								: `No products found for ${selectedCategoryName}`}
-// 					</h2>
-// 					{!loading && products.length > 0 && <ProductList products={products} />}
+// 			{/* all cateogires */}
+// 			<div className="scrollbar-hide flex w-full gap-4 overflow-x-auto py-4 pl-4 sm:flex-wrap sm:justify-center sm:gap-2 sm:overflow-x-visible sm:py-0 sm:pl-0 md:gap-4 md:pl-0 lg:gap-8">
+// 				{categories.map((category) => (
+// 					<div
+// 						key={category.id}
+// 						onClick={() => setSelectedSlug(category.slug)}
+// 						className={`rounded   ${selectedSlug === category.slug ? "bg-gree-600 text-whit" : "bg-whit"}`}
+// 					>
+// 						<div className="relative h-24 w-24 cursor-pointer  overflow-hidden rounded-full bg-gray-100 sm:my-1   md:my-2 lg:my-4 lg:h-32 lg:w-32">
+// 							<div className="absolute inset-2">
+// 								{category.backgroundImage?.url ? (
+// 									<Image
+// 										src={category.backgroundImage.url}
+// 										alt={category.name}
+// 										fill
+// 										className="object-contain"
+// 									/>
+// 								) : (
+// 									<div className="flex h-full items-center justify-center text-xs">No Image</div>
+// 								)}
+// 							</div>
+// 						</div>
+// 						<p className="mt-2 text-sm font-medium sm:text-lg">{category.name}</p>
+// 					</div>
+// 				))}
+// 			</div>
+// 			{/* category wise all products */}
+// 			{selectedCategory ? (
+// 				<div className="my-4  md:my-6 lg:my-12">
+// 					<ProductList products={selectedCategory.products} />
 // 				</div>
+// 			) : (
+// 				<p>ALL PRODUCTS</p>
 // 			)}
 // 		</div>
 // 	);
-// };
-
-// export default CategoryWiseProductsClient;
-
+// }

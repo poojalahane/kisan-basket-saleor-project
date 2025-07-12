@@ -15,8 +15,9 @@ export default async function HomePage({
 	searchParams?: { cursor?: string };
 }) {
 	const channel = params.channel;
+	const cursor = searchParams.cursor;
 	return (
-		<main className=" bg-[#F3F0F0] ">
+		<main className=" mb-1 bg-[#F3F0F0]">
 			<div className="hidden lg:block">
 				<Carousel />
 			</div>
@@ -34,10 +35,7 @@ export default async function HomePage({
 					</div>
 				</div>
 				<div className="">
-					<ProductListingSection
-						channel={params.channel}
-						cursor={typeof searchParams?.cursor === "string" ? searchParams.cursor : null}
-					/>
+					<ProductListingSection channel={channel} cursor={cursor} />
 				</div>
 			</div>
 
@@ -51,7 +49,7 @@ export default async function HomePage({
 				<ShopPage />
 			</div>
 
-			<div className=" "></div>
+			<div className="mt-4 md:mt-0 "></div>
 			<CustomerFeedback />
 		</main>
 	);

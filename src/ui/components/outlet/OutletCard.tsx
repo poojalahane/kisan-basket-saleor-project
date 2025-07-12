@@ -69,7 +69,7 @@ export default function OutletCard() {
 	const outlet = outletData.find((o) => o.name === selectedTab)!;
 
 	return (
-		<div className="max-w-7xl  md:mx-auto md:p-4  md:pb-8 lg:px-8 lg:pb-8">
+		<div className="max-w-7xl  md:mx-auto md:p-4  md:pb-4 lg:px-8 lg:pb-8">
 			<section className="flex flex-col gap-6 lg:flex-row">
 				{/* Left Image */}
 				<div className="relative h-[250px] w-full  overflow-hidden rounded-xl shadow-md sm:h-[300px] lg:h-[540px]  lg:w-[40%]">
@@ -113,7 +113,7 @@ export default function OutletCard() {
 						</div>
 
 						{/* Map Section */}
-						<div className="h-64 w-full overflow-hidden rounded-xl lg:h-[400px] lg:w-[420px]">
+						<div className="h-64 w-full overflow-hidden rounded-xl lg:h-[400px] lg:w-[360px]">
 							<iframe
 								src={outlet.mapEmbedUrl}
 								className="h-full w-full border-0"
