@@ -9,10 +9,10 @@ export default function CustomerFeedback() {
 				src="/customer-feedbackimages/customerFeedbaclBackgroundimage.png"
 				alt="Hero Background"
 				fill
-				className="object-cover opacity-20"
+				className="object-cover opacity-70"
 				priority
 			/>
-			<div className="mx-auto flex  max-w-7xl flex-col  items-center  gap-6 md:justify-center lg:flex-row ">
+			<div className="mx-auto flex  max-w-7xl flex-col-reverse  items-center  gap-6 md:justify-center lg:flex-row ">
 				{/* Right Section (Image with decorations) */}
 				<div className="relative flex justify-center md:w-[440px] lg:w-[490px]">
 					{/* Decorative Fruits */}
@@ -106,7 +106,7 @@ export default function CustomerFeedback() {
 
 					{/* Feedback Box */}
 					<div className="mx-auto w-full max-w-md rounded-[16px] bg-[#FFF1E1] px-4 py-4 sm:max-w-lg md:max-w-md lg:w-[519.45px]  lg:rounded-[25px] lg:px-6 lg:py-4">
-						<p className="font-inter text-[14px] font-medium leading-[22px] text-[#335537] sm:text-[15px] sm:leading-[24px] md:text-[18px] md:leading-[28px] lg:text-[30px] lg:leading-[40px] ">
+						<p className="font-inter text-[14px] font-medium leading-[22px] text-[#335537] sm:text-[15px] sm:leading-[24px] md:text-[18px] md:leading-[28px] lg:text-[28px] lg:leading-[38px] ">
 							Every product from Kisan Basket reflects our promise of purity, freshness, and honesty — and
 							that’s why our users keep coming back.
 						</p>

@@ -11,7 +11,13 @@ interface CategoryWithProducts extends CategoryListItemFragment {
 	products: ProductListFragment[];
 }
 
-export default function CategoryWiseProductsClient({ categories }: { categories: CategoryWithProducts[] }) {
+export default function CategoryWiseProductsClient({
+	categories,
+	channel,
+}: {
+	categories: CategoryWithProducts[];
+	channel: string;
+}) {
 	const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
 	const [loading, setLoading] = useState(false);
 	const [delayedSlug, setDelayedSlug] = useState<string | null>(null);
@@ -68,7 +74,7 @@ export default function CategoryWiseProductsClient({ categories }: { categories:
 								)}
 							</div>
 						</div>
-						<p className="mt-2 text-sm font-medium sm:text-lg">{category.name}</p>
+						<p className="mt-2 flex items-center justify-center text-sm font-medium">{category.name}</p>
 					</div>
 				))}
 			</div>
@@ -89,7 +95,8 @@ export default function CategoryWiseProductsClient({ categories }: { categories:
 						</div>
 					) : (
 						<div className="my-4 md:my-6 lg:pt-12">
-							{/* <ProductListingSection /> */}all products
+							{/* <ProductListingSection channel={channel} /> all products */} ALL PRODUCTS
+					
 						</div>
 					)}
 				</div>

@@ -171,8 +171,8 @@ const ContactUsMain = () => {
 
 			{/* Contact Form */}
 			<div className="bg-white  md:py-6 lg:pb-12  lg:pt-40">
-				<section className="mx-auto w-full max-w-xl px-8 md:px-1 lg:w-[600px]">
-					<div className="relative mx-auto md:mb-4 h-[70px] w-[220px]  md:w-[400px] lg:h-[80px] lg:w-[600px]">
+				<section className="mx-auto w-full max-w-7xl  px-8 md:px-1 lg:w-[750px]">
+					<div className="relative mx-auto h-[70px] w-[220px] md:mb-4  md:w-[400px] lg:h-[80px] lg:w-[600px]">
 						<Image
 							src="/contactimages/getintoutchimage.svg"
 							alt="Get in Touch"
@@ -180,12 +180,12 @@ const ContactUsMain = () => {
 							className="object-contain"
 						/>
 					</div>
-					<p className="md:mb-8 mb-4 text-center font-sourceSerif text-[16px] font-normal leading-[20px] tracking-[0.25px] text-[#000000BF] lg:text-[20px]">
+					<p className="mb-4 text-center font-sourceSerif text-[16px] font-normal leading-[20px] tracking-[0.25px] text-[#000000BF] md:mb-8 lg:text-[20px]">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et
 						dolore magna aliqua.
 					</p>
 
-					<form className="space-y-6" onSubmit={handleSubmit}>
+					<form className="space-y-6 " onSubmit={handleSubmit}>
 						<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
 							{[
 								{ name: "firstName", placeholder: "First name" },

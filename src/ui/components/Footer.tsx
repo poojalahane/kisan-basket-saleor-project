@@ -2,92 +2,107 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/Image";
 import { FaFacebookF, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default function FooterClient({ footerLinks, channels }: any) {
 	const [email, setEmail] = useState("");
 
 	return (
-		<footer
-			className="w-full bg-[#cdd3d9] px-6 py-4
-		text-[#242424] md:px-16 md:py-10"
-		>
-			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 text-[#242424]  sm:grid-cols-2 md:grid-cols-4">
-				{/* Logo & About */}
-				<div>
-					<div className="mb-4 flex items-center space-x-2 text-[#242424] ">
-						<h2 className="text-xl font-semibold">Kisan Basket</h2>
-					</div>
-					<p className="mb-4 text-sm text-[#242424] ">
-						Bringing fresh, quality produce directly from farmers to your doorstep.
-					</p>
-					<div className="flex space-x-4 text-[#242424] ">
-						<a href="#" className="hover:text-white">
-							<FaFacebookF className="h-6 w-6" />
-						</a>
-						<a
-							href="https://www.instagram.com/kisan_basket?igsh=MThtcTh0eWx4Mmo3ZA=="
-							className="hover:text-white"
-						>
-							<FaInstagram className="h-6 w-6" />
-						</a>
-						<a href="#" className="hover:text-white">
-							<FaLinkedin className="h-6 w-6" />
-						</a>
-					</div>
-				</div>
+		<footer className="">
+			<div
+				className="md:lg-16 relative w-full  px-6 py-4 
+		text-[#242424] md:pt-10 lg:h-[450px] lg:py-0 lg:pt-12 "
+			>
+				<Image
+					src="/homepageimages/footerbackgroundimage.png"
+					alt="Hero Background"
+					fill
+					className="z-0 object-cover "
+					priority
+				/>
 
-				{/* Quick Links */}
-				<div>
-					<h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
-					<ul className="space-y-2 text-sm  ">
-						<li>
-							<a href="/about" className="hover:text-white">
-								About Us
-							</a>
-						</li>
-						<li>
-							<a href="/shop" className="hover:text-white">
-								Shop
-							</a>
-						</li>
-						<li>
-							<a href="/blog" className="hover:text-white">
-								Blog
-							</a>
-						</li>
-						<li>
-							<a href="/contact" className="hover:text-white">
-								Contact
-							</a>
-						</li>
-					</ul>
-				</div>
+				<div className="relative z-10 ">
+					<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 text-[#242424]  sm:grid-cols-2 md:grid-cols-4">
+						{/* Logo & About */}
+						<div className="">
+							<div className="mb-1 flex items-center space-x-2 text-[#242424] ">
+								<div className="relative h-[90px] w-[232px]">
+									<Image src="/homepageimages/footerkisanbasketlogo.svg" alt="Banner" fill className="" />
+								</div>
+							</div>
+							<p className="mb-4 text-sm text-black ">
+								Bringing fresh, quality produce directly from farmers to your doorstep.
+							</p>
+							<div className="flex space-x-4 text-[#242424] ">
+								<a href="#" className="hover:text-white">
+									<FaFacebookF className="h-6 w-6" />
+								</a>
+								<a
+									href="https://www.instagram.com/kisan_basket?igsh=MThtcTh0eWx4Mmo3ZA=="
+									className="hover:text-white"
+								>
+									<FaInstagram className="h-6 w-6" />
+								</a>
+								<a href="#" className="hover:text-white">
+									<FaLinkedin className="h-6 w-6" />
+								</a>
+							</div>
+						</div>
 
-				{/* Contact Info */}
-				<div>
-					<h3 className="mb-4 text-lg font-semibold">Contact Info</h3>
-					<ul className="space-y-3 text-sm  ">
-						<li className="flex items-start space-x-2">
-							<FaMapMarkerAlt className="mt-1 h-6 w-6" />
-							<span>Office No. 302, 3rd Floor, 74 Downtown, Baner Road, Baner, Pune-411045</span>
-						</li>
-						<li className="flex items-start space-x-2">
-							<FaPhoneAlt className="mt-1 " />
-							<span>+919730752125</span>
-						</li>
-						<li className="flex items-start space-x-2">
-							<FaEnvelope className="mt-1 " />
-							<span>info@kisanbasket.com</span>
-						</li>
-					</ul>
-				</div>
+						{/* Quick Links */}
+						<div className="pt-[10px] text-black">
+							<h3 className="mb-4 text-lg font-bold lg:text-[22px]">Quick Links</h3>
+							<ul className="space-y-2 text-sm  lg:text-[16px]">
+								<li>
+									<a href="/about" className="hover:text-white">
+										About Us
+									</a>
+								</li>
+								<li>
+									<a href="/shop" className="hover:text-white">
+										Shop
+									</a>
+								</li>
+								<li>
+									<a href="/blog" className="hover:text-white">
+										Blog
+									</a>
+								</li>
+								<li>
+									<a href="/contact" className="hover:text-white">
+										Contact
+									</a>
+								</li>
+							</ul>
+						</div>
 
-				{/* Newsletter */}
-				<div>
-					<h3 className="mb-4 text-lg font-semibold">Newsletter</h3>
-					<p className="mb-4 text-sm  ">Subscribe to get updates on fresh produce and special offers.</p>
-					{/* <form className="flex">
+						{/* Contact Info */}
+						<div className="pt-[10px] text-black">
+							<h3 className="mb-4 text-lg font-bold lg:text-[22px]">Contact Info</h3>
+							<ul className="space-y-3 text-sm  lg:text-[16px]">
+								<li className="flex items-start space-x-2">
+									<FaMapMarkerAlt className="mt-1 h-6 w-6" />
+									<span>Office No. 302, 3rd Floor, 74 Downtown, Baner Road, Baner, Pune-411045</span>
+								</li>
+								<li className="flex items-start space-x-2">
+									<FaPhoneAlt className="mt-1 " />
+									<span>+919730752125</span>
+								</li>
+								<li className="flex items-start space-x-2">
+									<FaEnvelope className="mt-1 " />
+									<span>info@kisanbasket.com</span>
+								</li>
+							</ul>
+						</div>
+
+						{/* Newsletter */}
+						<div className="pt-[10px] text-black">
+							<h3 className="mb-4 text-lg font-bold lg:text-[22px]">Newsletter</h3>
+							<p className="mb-4 text-sm lg:text-[16px] ">
+								Subscribe to get updates on fresh produce and special offers.
+							</p>
+							{/* <form className="flex">
 						<input
 							type="email"
 							value={email}
@@ -100,11 +115,13 @@ export default function FooterClient({ footerLinks, channels }: any) {
 							Subscribe
 						</button>
 					</form> */}
-				</div>
-			</div>
+						</div>
+					</div>
 
-			<div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm  ">
-				© {new Date().getFullYear()} Kisan Basket. All rights reserved.
+					<div className=" mt-8 border-t border-gray-100  pt-2 text-center text-sm text-white lg:mt-40  ">
+						<p className=" ">© {new Date().getFullYear()} Kisan Basket. All rights reserved.</p>
+					</div>
+				</div>
 			</div>
 		</footer>
 	);

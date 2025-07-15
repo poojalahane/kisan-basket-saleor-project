@@ -25,7 +25,7 @@ const CategoryWiseProducts = async ({ channel }: { channel: string }) => {
 		}),
 	);
 
-	return <CategoryWiseProductsClient categories={categoriesWithProducts} />;
+	return <CategoryWiseProductsClient channel={channel} categories={categoriesWithProducts} />;
 };
 
 export default CategoryWiseProducts;
