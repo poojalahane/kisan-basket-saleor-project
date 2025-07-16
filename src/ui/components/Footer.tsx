@@ -12,10 +12,10 @@ export default function FooterClient({ footerLinks, channels }: any) {
 		<footer className="">
 			<div
 				className="md:lg-16 relative w-full  px-6 py-4 
-		text-[#242424] md:pt-10 lg:h-[450px] lg:py-0 lg:pt-12 "
+		text-[#242424] md:pt-10 lg:h-[500px] lg:py-0 lg:pt-12 "
 			>
 				<Image
-					src="/homepageimages/footerbackgroundimage.png"
+					src="/homepageimages/footerbackgroundimage.svg"
 					alt="Hero Background"
 					fill
 					className="z-0 object-cover "
@@ -51,8 +51,8 @@ export default function FooterClient({ footerLinks, channels }: any) {
 						</div>
 
 						{/* Quick Links */}
-						<div className="pt-[10px] text-black">
-							<h3 className="mb-4 text-lg font-bold lg:text-[22px]">Quick Links</h3>
+						<div className="  pt-[10px] text-black lg:ml-16 lg:pl-[32px]">
+							<h3 className="mb-4 text-lg font-bold lg:text-[22px] ">Quick Links</h3>
 							<ul className="space-y-2 text-sm  lg:text-[16px]">
 								<li>
 									<a href="/about" className="hover:text-white">
@@ -118,7 +118,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 						</div>
 					</div>
 
-					<div className=" mt-8 border-t border-gray-100  pt-2 text-center text-sm text-white lg:mt-40  ">
+					<div className=" mt-8 border-t border-gray-100  pt-2 text-center text-sm text-white lg:mt-52  ">
 						<p className=" ">© {new Date().getFullYear()} Kisan Basket. All rights reserved.</p>
 					</div>
 				</div>

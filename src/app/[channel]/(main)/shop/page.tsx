@@ -2,14 +2,9 @@ import Image from "next/image";
 
 import CategoryWiseProducts from "@/ui/components/product/CategoryWiseProducts";
 
-export default async function ShopPage({
-	params,
-	searchParams,
-}: {
-	params: { channel: string };
-	searchParams?: { cursor?: string };
-}) {
-	const channel = params.channel;
+export default async function ShopPage(props: { params: Promise<{ channel: string }> }) {
+	const channel = (await props.params).channel;
+	
 	return (
 		<div
 			className="h-auto min-h-[400px] w-full bg-[#F3F0F0]"
@@ -19,13 +14,13 @@ export default async function ShopPage({
 			<div className="relative w-full md:h-[238px] lg:h-[289px]">
 				{/* background image */}
 				<Image
-					src="/shoppageimages/shopbannerimage.png"
+					src="/shoppageimages/shoppageherosectionimage.svg"
 					alt="kisan basket image"
 					fill
 					className="object-cover"
 				/>
 				{/* clouds */}
-				<Image
+				{/* <Image
 					src="/shoppageimages/cloud1.svg"
 					alt="Cloud Top Left"
 					width={80}
@@ -59,7 +54,7 @@ export default async function ShopPage({
 					width={100}
 					height={110}
 					className="absolute left-[800px]  z-20 hidden md:block md:h-[110px] md:w-[100px] lg:h-[137px] lg:w-[128px]"
-				/>
+				/> */}
 			</div>
 
 			<div className="w-full ">

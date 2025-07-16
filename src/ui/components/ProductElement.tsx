@@ -47,7 +47,7 @@ export function ProductElement({
 				>
 					<div className="rounded-[24px] border-8 border-white">
 						{/* Image wrapper */}
-						<div className="relative h-[140px] w-full overflow-hidden rounded-[24px]  sm:h-[160px] md:h-[200px] lg:h-[260px]">
+						<div className="relative h-[140px] w-full overflow-hidden rounded-[24px] bg-[#B4CDCB]  sm:h-[160px] md:h-[200px] lg:h-[260px]">
 							{product.thumbnail?.url && (
 								<Image
 									src={product.thumbnail.url}

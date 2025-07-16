@@ -7,15 +7,9 @@ import YouTubeShortsCarousel from "@/ui/components/HomeContent/YoutubeShortsSect
 import Image from "next/image";
 
 import CustomerFeedback from "@/ui/components/HomeContent/CustomerFeedback";
-export default async function HomePage({
-	params,
-	searchParams,
-}: {
-	params: { channel: string };
-	searchParams?: { cursor?: string };
-}) {
-	const channel = params.channel;
-	const cursor = searchParams.cursor;
+export default async function HomePage(props: { params: Promise<{ channel: string }> }) {
+	const channel = (await props.params).channel;
+
 	return (
 		<main className=" mb-1 bg-[#F3F0F0]">
 			<div className="hidden lg:block">
@@ -35,7 +29,7 @@ export default async function HomePage({
 					</div>
 				</div>
 				<div className="">
-					<ProductListingSection channel={channel} cursor={cursor} />
+					<ProductListingSection channel={channel} />
 				</div>
 			</div>
 

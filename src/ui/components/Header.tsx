@@ -161,15 +161,15 @@ export function Header({ channel }: { channel: string }) {
 // 					<div className="hidden items-center md:flex ">
 // 						{/* <FaSearch /> */}
 
-// 						<div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
-// 							<Image
-// 								onClick={() => router.push("/kisan-basket/products")}
-// 								src="/images/search.svg"
-// 								alt="kisan basket image"
-// 								fill
-// 								style={{ objectFit: "contain" }}
-// 							/>
-// 						</div>
+						// <div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
+						// 	<Image
+						// 		onClick={() => router.push("/kisan-basket/products")}
+						// 		src="/images/search.svg"
+						// 		alt="kisan basket image"
+						// 		fill
+						// 		style={{ objectFit: "contain" }}
+						// 	/>
+						// </div>
 // 						<div
 // 							onClick={() => router.push("/kisan-basket/cart")}
 // 							className="cursor-pointer "
