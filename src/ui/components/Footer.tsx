@@ -11,14 +11,14 @@ export default function FooterClient({ footerLinks, channels }: any) {
 	return (
 		<footer className="">
 			<div
-				className="md:lg-16 relative w-full  px-6 py-4 
-		text-[#242424] md:pt-10 lg:h-[500px] lg:py-0 lg:pt-12 "
+				className="md:lg-16 relative   w-full px-6 
+		py-4 text-[#242424] md:pt-10 lg:h-[500px] lg:py-0 lg:pt-12 "
 			>
 				<Image
 					src="/homepageimages/footerbackgroundimage.svg"
 					alt="Hero Background"
 					fill
-					className="z-0 object-cover "
+					className="z-0 hidden  object-cover lg:block"
 					priority
 				/>
 
@@ -27,7 +27,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 						{/* Logo & About */}
 						<div className="">
 							<div className="mb-1 flex items-center space-x-2 text-[#242424] ">
-								<div className="relative h-[90px] w-[232px]">
+								<div className="relative h-[80px] w-[180px] md:h-[90px] md:w-[232px]">
 									<Image src="/homepageimages/footerkisanbasketlogo.svg" alt="Banner" fill className="" />
 								</div>
 							</div>
@@ -51,7 +51,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 						</div>
 
 						{/* Quick Links */}
-						<div className="  pt-[10px] text-black lg:ml-16 lg:pl-[32px]">
+						<div className="pt-4  text-black md:pt-[10px] lg:ml-16 lg:pl-[32px]">
 							<h3 className="mb-4 text-lg font-bold lg:text-[22px] ">Quick Links</h3>
 							<ul className="space-y-2 text-sm  lg:text-[16px]">
 								<li>
@@ -78,7 +78,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 						</div>
 
 						{/* Contact Info */}
-						<div className="pt-[10px] text-black">
+						<div className="pt-4 text-black md:pt-[10px]">
 							<h3 className="mb-4 text-lg font-bold lg:text-[22px]">Contact Info</h3>
 							<ul className="space-y-3 text-sm  lg:text-[16px]">
 								<li className="flex items-start space-x-2">
@@ -97,7 +97,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 						</div>
 
 						{/* Newsletter */}
-						<div className="pt-[10px] text-black">
+						<div className="pt-4 text-black md:pt-[10px]">
 							<h3 className="mb-4 text-lg font-bold lg:text-[22px]">Newsletter</h3>
 							<p className="mb-4 text-sm lg:text-[16px] ">
 								Subscribe to get updates on fresh produce and special offers.
