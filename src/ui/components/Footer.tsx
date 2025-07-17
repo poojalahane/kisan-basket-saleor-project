@@ -23,7 +23,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 				/>
 
 				<div className="relative z-10 ">
-					<div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 text-[#242424]  sm:grid-cols-2 md:grid-cols-4">
+					<div className="mx-auto grid max-w-7xl grid-cols-1 text-[#242424] sm:grid-cols-2  md:grid-cols-4 lg:gap-10">
 						{/* Logo & About */}
 						<div className="">
 							<div className="mb-1 flex items-center space-x-2 text-[#242424] ">
@@ -118,7 +118,7 @@ export default function FooterClient({ footerLinks, channels }: any) {
 						</div>
 					</div>
 
-					<div className=" mt-8 border-t border-gray-100  pt-2 text-center text-sm text-white lg:mt-52  ">
+					<div className=" mt-2 md:mt-6 border-t border-gray-100  pt-2 text-center text-sm text-white lg:mt-52  ">
 						<p className=" ">© {new Date().getFullYear()} Kisan Basket. All rights reserved.</p>
 					</div>
 				</div>

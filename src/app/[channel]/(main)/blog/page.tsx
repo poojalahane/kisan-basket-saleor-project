@@ -39,7 +39,10 @@ const page = async (props: { params: Promise<{ channel: string }> }) => {
 	];
 	return (
 		<div>
-			<div className="h-auto min-h-[400px] w-full  " style={{ boxShadow: "4px 4px 7.2px 0px #716B6B40" }}>
+			<div
+				className="h-auto min-h-[400px] w-full bg-[#E3DFDF] "
+				style={{ boxShadow: "4px 4px 7.2px 0px #716B6B40" }}
+			>
 				{/* Hero Banner */}
 				<div className="relative w-full md:h-[238px] lg:h-[289px]">
 					{/* background image */}

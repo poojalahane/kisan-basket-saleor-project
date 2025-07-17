@@ -4,7 +4,7 @@ import Link from "next/link";
 const page = ({ slug }) => {
 	return (
 		<div>
-			<div className="min-h-screen bg-white text-gray-800">
+			<div className=" bg-white text-gray-800">
 				{/* Header / Hero Section */}
 				<section className="relative h-[300px] w-full overflow-hidden md:h-[400px] lg:h-[440px]">
 					{/* background image */}
@@ -17,19 +17,19 @@ const page = ({ slug }) => {
 				</section>
 
 				{/* Content Section */}
-				<main className=" min-h-[400px] bg-[#EBE4E4]">
+				<main className=" min-h-[100px] bg-[#EBE4E4]">
 					{/* bredcrumb */}
 					<div className="p-4">
 						<nav className="text-[12px] text-gray-600">
 							<span>
-								<Link href="/" className="hover:text-black">
+								<Link href="/kisan-basket" className="hover:text-black">
 									Home
 								</Link>
 							</span>
 							<span className="mx-2">{">"}</span>
 
 							<span>
-								<Link href="/blog" className="hover:text-black">
+								<Link href="/kisan-basket/blog" className="hover:text-black">
 									Blogs
 								</Link>
 							</span>
@@ -38,6 +38,7 @@ const page = ({ slug }) => {
 							<span className="font-medium text-gray-900">Ghee</span>
 						</nav>
 					</div>
+					{/* benefits section */}
 					<div className="mx-auto flex max-w-7xl items-center justify-center space-x-4 px-2 py-2 md:py-4 lg:py-8">
 						<div>
 							<div className="relative min-h-[200px] md:w-[480px] lg:h-[304px]">
@@ -45,9 +46,7 @@ const page = ({ slug }) => {
 							</div>
 						</div>
 						<div className="flex flex-col px-4 py-8 md:px-8 lg:px-16">
-							<h2 className="mb-4 text-2xl font-bold  md:text-3xl lg:text-4xl">
-								Desi Ghee Benefits
-							</h2>
+							<h2 className="mb-4 text-2xl font-bold  md:text-3xl lg:text-4xl">Desi Ghee Benefits</h2>
 
 							<ul className="space-y-4 text-base text-gray-700 md:text-lg">
 								<li className="flex items-start">
@@ -73,6 +72,33 @@ const page = ({ slug }) => {
 							</ul>
 						</div>
 					</div>
+					{/* introduction section */}
+					<section>
+						<div className="mx-auto w-full max-w-7xl px-6  pb-4 md:px-16 lg:px-24">
+							<div className="flex flex-col items-center justify-center ">
+								{/* Text Content */}
+								<div className="flex-1">
+									<h1 className="mb-4 flex items-center justify-center text-3xl font-bold md:text-4xl">
+										Discover the Purity of Desi Ghee
+									</h1>
+									<p className="mb-6 flex flex max-w-4xl justify-center text-base md:text-lg">
+										Desi Ghee, known for its rich aroma and unique taste, is a staple in Indian households.
+										Made using traditional methods, it retains its natural nutrients and offers numerous
+										health benefits including improved digestion, immunity boost, and glowing skin.
+									</p>
+									{/* <ul className="mb-6 list-inside list-disc space-y-2 text-gray-700">
+										<li>Boosts immunity and metabolism</li>
+										<li>Rich in healthy fats and vitamins</li>
+										<li>Improves digestion and strengthens bones</li>
+										<li>Perfect for traditional Indian cooking</li>
+									</ul>
+									<button className="rounded-md bg-yellow-600 px-6 py-2 font-semibold text-white transition duration-300 hover:bg-yellow-700">
+										Shop Now
+									</button> */}
+								</div>
+							</div>
+						</div>
+					</section>
 				</main>
 			</div>
 		</div>

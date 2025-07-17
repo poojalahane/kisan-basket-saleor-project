@@ -1,3 +1,1 @@
-export const KisanBasketLogo = {
-	value: "",
-};
+export const REGISTER_IMAGE = "/images/login.svg";
