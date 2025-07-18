@@ -50,24 +50,17 @@ export default async function HomePage(props: { params: Promise<{ channel: strin
 
 	return (
 		<section>
-			<main className="  bg-[#F3F0F0]">
+			<main>
 				<div className="hidden lg:block">
 					<Carousel />
 				</div>
 
-				{/* Categories */}
 				<div className="mx-auto flex w-full items-center justify-center p-2 py-2 md:p-4 md:py-4 lg:p-8">
 					<AllCategories channel={channel} />
 				</div>
 
-				{/* Products */}
-				<div className="mx-auto">
-					<div className="flex justify-center  py-2 md:py-4">
-						<div className="relative aspect-[16/5] w-[220px] px-4  md:w-[300px] lg:w-[450px]">
-							<Image src="/images/bestsellerimage.svg" alt="Kisan Basket" fill className="object-contain" />
-						</div>
-					</div>
-					<div className="">
+				<div className="mx-auto w-full">
+					<div className=" ">
 						<ProductListingSection channel={channel} />
 					</div>
 				</div>
@@ -75,15 +68,12 @@ export default async function HomePage(props: { params: Promise<{ channel: strin
 				<div>
 					<YouTubeShortsCarousel />
 				</div>
-
-				{/* Process Steps */}
-				<ProcessImagesComponent />
+				<div className="mt-4 md:mt-0 "></div>
+				<CustomerFeedback />
+				{/* <ProcessImagesComponent /> */}
 				<div className="">
 					<ShopPage />
 				</div>
-
-				<div className="mt-4 md:mt-0 "></div>
-				<CustomerFeedback />
 			</main>
 		</section>
 	);

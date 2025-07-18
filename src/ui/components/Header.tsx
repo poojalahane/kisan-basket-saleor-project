@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 
 export function Header({ channel }: { channel: string }) {
 	const router = useRouter();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [cartCount] = useState(0);
 
 	const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
@@ -19,17 +21,10 @@ export function Header({ channel }: { channel: string }) {
 		{ href: `/${channel}/blog`, label: "Blog" },
 	];
 
-	const iconLinks = [
-		{ src: "/headerimages/search.svg", alt: "Search", route: `/${channel}/products` },
-		{ src: "/headerimages/cart.svg", alt: "Cart", route: `/${channel}/cart` },
-		{ src: "/headerimages/profileicon.svg", alt: "Profile", route: `/${channel}/login` },
-	];
-
 	return (
-		<header className="sticky top-0 z-50 bg-neutral-100/50 bg-white  shadow-sm">
-			<div className="mx-auto max-w-7xl px-4 sm:px-8 lg:py-2">
+		<header className="sticky top-0 z-50 w-full bg-white shadow-md">
+			<div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
 				<div className="flex h-16 items-center justify-between">
-					{/* Logo */}
 					<div
 						onClick={() => router.push(`/${channel}`)}
 						className="relative h-12 w-32 cursor-pointer md:h-16 md:w-40"
@@ -43,25 +38,37 @@ export function Header({ channel }: { channel: string }) {
 						/>
 					</div>
 
-					{/* Desktop Navigation */}
-					<nav className="hidden font-jua text-base text-[#242424] md:flex md:items-center md:space-x-6 lg:space-x-10 lg:text-[22px]">
+					<nav className="hidden font-jua text-base text-[rgb(139,69,19)] md:flex md:items-center md:space-x-6 lg:space-x-10 lg:text-[22px]">
 						{navLinks.map(({ href, label }) => (
-							<Link key={href} href={href} className="transition hover:text-green-700">
+							<Link
+								key={href}
+								href={href}
+								className="transition-colors duration-200 hover:text-[rgb(139,195,74)]"
+							>
 								{label}
 							</Link>
 						))}
 					</nav>
 
-					{/* Icons */}
-					<div className="hidden md:flex md:items-center md:space-x-3 lg:space-x-6">
-						{iconLinks.map(({ src, alt, route }, idx) => (
-							<div key={idx} onClick={() => router.push(route)} className="relative h-8 w-8 cursor-pointer">
-								<Image src={src} alt={alt} fill className="object-contain" />
+					<div className="hidden text-2xl text-[rgb(139,69,19)] md:flex md:items-center md:space-x-5">
+						<button onClick={() => router.push(`/${channel}/products`)}>
+							<CiSearch className="transition hover:text-[rgb(139,195,74)]" />
+						</button>
+
+						<button onClick={() => router.push(`/${channel}/cart`)}>
+							<div className="relative">
+								<CiShoppingCart className="transition hover:text-[rgb(139,195,74)]" />
+								<span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[rgb(139,195,74)] text-xs text-white">
+									{cartCount}
+								</span>
 							</div>
-						))}
+						</button>
+
+						<button onClick={() => router.push(`/${channel}/login`)}>
+							<CiUser className="transition hover:text-[rgb(139,195,74)]" />
+						</button>
 					</div>
 
-					{/* Mobile Menu Button */}
 					<button className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
 						<div className="relative h-8 w-8">
 							{isMenuOpen ? (
@@ -73,41 +80,38 @@ export function Header({ channel }: { channel: string }) {
 					</button>
 				</div>
 
-				{/* Mobile Menu */}
 				{isMenuOpen && (
-					<div className="mt-2 rounded-md bg-white p-4 font-jua text-[#242424] shadow-md md:hidden">
+					<div className="font-poppins mt-2 space-y-2 rounded-md bg-white p-4 text-[rgb(139,69,19)] shadow-md md:hidden">
 						{navLinks.map(({ href, label }) => (
 							<Link
 								key={href}
 								href={href}
-								className="block py-2 text-base transition hover:text-green-700"
+								className="block py-2 text-base transition hover:text-[rgb(139,195,74)]"
 								onClick={() => setIsMenuOpen(false)}
 							>
 								{label}
 							</Link>
 						))}
 
-						<div
+						<button
 							onClick={() => {
 								router.push(`/${channel}/cart`);
 								setIsMenuOpen(false);
 							}}
-							className="block cursor-pointer py-2 transition hover:text-green-700"
+							className="w-full py-2 text-left transition hover:text-[rgb(139,195,74)]"
 						>
-							Cart
-						</div>
+							Cart ({cartCount})
+						</button>
 
-						<div className="mt-4">
-							<button
-								onClick={() => {
-									router.push(`/${channel}/login`);
-									setIsMenuOpen(false);
-								}}
-								className="w-full rounded-md bg-[#646A36] px-4 py-2 text-sm text-white shadow-sm"
-							>
-								Sign In
-							</button>
-						</div>
+						<button
+							onClick={() => {
+								router.push(`/${channel}/login`);
+								setIsMenuOpen(false);
+							}}
+							className="mt-4 w-full rounded-md bg-[#646A36] px-4 py-2 text-sm text-white shadow"
+						>
+							Sign In
+						</button>
 					</div>
 				)}
 			</div>
@@ -161,15 +165,15 @@ export function Header({ channel }: { channel: string }) {
 // 					<div className="hidden items-center md:flex ">
 // 						{/* <FaSearch /> */}
 
-						// <div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
-						// 	<Image
-						// 		onClick={() => router.push("/kisan-basket/products")}
-						// 		src="/images/search.svg"
-						// 		alt="kisan basket image"
-						// 		fill
-						// 		style={{ objectFit: "contain" }}
-						// 	/>
-						// </div>
+// <div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
+// 	<Image
+// 		onClick={() => router.push("/kisan-basket/products")}
+// 		src="/images/search.svg"
+// 		alt="kisan basket image"
+// 		fill
+// 		style={{ objectFit: "contain" }}
+// 	/>
+// </div>
 // 						<div
 // 							onClick={() => router.push("/kisan-basket/cart")}
 // 							className="cursor-pointer "
