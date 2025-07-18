@@ -23,3 +23,8 @@ body {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
+
+input:-webkit-autofill {
+	transition: background-color 9999s ease-in-out 0s;
+	-webkit-text-fill-color: #000 !important;
+}

@@ -23,7 +23,7 @@ const OutletSection = ({
 	const isOdd = id % 2 !== 0;
 
 	return (
-		<div className=" mt-2  pb-2 lg:my-2">
+		<div className=" mt-2  pb-2 lg:mt-2">
 			<div className="mx-auto w-full max-w-7xl px-4 md:px-2 lg:px-0 lg:pl-8">
 				<div
 					className={`flex flex-col items-center md:flex-row md:items-start ${

@@ -20,9 +20,9 @@ export function Header({ channel }: { channel: string }) {
 	];
 
 	const iconLinks = [
-		{ src: "/headerimages/search.svg", alt: "Search", route: `/${channel}/products` },
-		{ src: "/headerimages/cart.svg", alt: "Cart", route: `/${channel}/cart` },
-		{ src: "/headerimages/profileicon.svg", alt: "Profile", route: `/${channel}/login` },
+		{ src: "/headerimages/searchiconimage.svg", alt: "Search", route: `/${channel}/products` },
+		{ src: "/headerimages/carticonimage.svg", alt: "Cart", route: `/${channel}/cart` },
+		{ src: "/headerimages/profileiconimage.svg", alt: "Profile", route: `/${channel}/login` },
 	];
 
 	return (
@@ -44,7 +44,7 @@ export function Header({ channel }: { channel: string }) {
 					</div>
 
 					{/* Desktop Navigation */}
-					<nav className="hidden font-jua text-base text-[#242424] md:flex md:items-center md:space-x-6 lg:space-x-10 lg:text-[22px]">
+					<nav className="hidden font-jua text-base text-[#592D15] md:flex md:items-center md:space-x-6 lg:space-x-10 lg:text-[22px]">
 						{navLinks.map(({ href, label }) => (
 							<Link key={href} href={href} className="transition hover:text-green-700">
 								{label}
@@ -53,10 +53,10 @@ export function Header({ channel }: { channel: string }) {
 					</nav>
 
 					{/* Icons */}
-					<div className="hidden md:flex md:items-center md:space-x-3 lg:space-x-6">
+					<div className="hidden text-[#503F3F] md:flex md:items-center md:space-x-3 lg:space-x-6">
 						{iconLinks.map(({ src, alt, route }, idx) => (
-							<div key={idx} onClick={() => router.push(route)} className="relative h-8 w-8 cursor-pointer">
-								<Image src={src} alt={alt} fill className="object-contain" />
+							<div key={idx} onClick={() => router.push(route)} className="relative  h-8 w-8 cursor-pointer">
+								<Image src={src} alt={alt} fill className="object-contain " />
 							</div>
 						))}
 					</div>
@@ -161,15 +161,15 @@ export function Header({ channel }: { channel: string }) {
 // 					<div className="hidden items-center md:flex ">
 // 						{/* <FaSearch /> */}
 
-						// <div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
-						// 	<Image
-						// 		onClick={() => router.push("/kisan-basket/products")}
-						// 		src="/images/search.svg"
-						// 		alt="kisan basket image"
-						// 		fill
-						// 		style={{ objectFit: "contain" }}
-						// 	/>
-						// </div>
+// <div className="cursor-pointer " style={{ position: "relative", width: "60px", height: "34px" }}>
+// 	<Image
+// 		onClick={() => router.push("/kisan-basket/products")}
+// 		src="/images/search.svg"
+// 		alt="kisan basket image"
+// 		fill
+// 		style={{ objectFit: "contain" }}
+// 	/>
+// </div>
 // 						<div
 // 							onClick={() => router.push("/kisan-basket/cart")}
 // 							className="cursor-pointer "
