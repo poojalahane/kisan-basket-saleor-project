@@ -61,7 +61,7 @@ export async function ProductListingSection({ channel, cursor }: Props) {
 
 	if (!products) notFound();
 
-	const topProducts = products.edges.slice(0, 4).map((e) => e.node);
+	const topProducts = products.edges.slice(0, 8).map((e) => e.node);
 
 	return (
 		<section className="bg-[#FFFBEF] py-20">

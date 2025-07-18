@@ -51,7 +51,7 @@ export default async function HomePage(props: { params: Promise<{ channel: strin
 	return (
 		<section>
 			<main>
-				<div className="hidden lg:block">
+				<div>
 					<Carousel />
 				</div>
 

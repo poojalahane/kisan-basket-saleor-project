@@ -50,7 +50,7 @@ export function Header({ channel }: { channel: string }) {
 						))}
 					</nav>
 
-					<div className="hidden text-2xl text-[rgb(139,69,19)] md:flex md:items-center md:space-x-5">
+					<div className="hidden text-3xl text-[rgb(139,69,19)] md:flex md:items-center md:space-x-5">
 						<button onClick={() => router.push(`/${channel}/products`)}>
 							<CiSearch className="transition hover:text-[rgb(139,195,74)]" />
 						</button>

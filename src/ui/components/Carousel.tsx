@@ -34,7 +34,7 @@ const CarouselHeroSection: React.FC = () => {
 			<div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
 				<div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 					{/* Left Content */}
-					<div className="animate-fade-in">
+					<div className=" animate-fade-in">
 						<h1
 							className="mb-6 text-balance text-4xl font-bold md:text-6xl"
 							style={{ color: "#8B4513" }} // brown

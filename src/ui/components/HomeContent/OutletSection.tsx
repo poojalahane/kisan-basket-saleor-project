@@ -271,7 +271,7 @@ export default function ShopPage() {
 				</div> */}
 
 				{/* Shop Selector - Mobile */}
-				<div className="mb-8 flex flex-wrap justify-center gap-3 lg:hidden">
+				{/* <div className="mb-8 flex flex-wrap justify-center gap-3 lg:hidden">
 					{shops.map((shop) => (
 						<button
 							key={shop.id}
@@ -283,7 +283,7 @@ export default function ShopPage() {
 							{shop.location}
 						</button>
 					))}
-				</div>
+				</div> */}
 
 				<div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 					{/* Text + Info */}
