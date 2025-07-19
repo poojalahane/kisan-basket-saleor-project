@@ -5,12 +5,8 @@ export default function CustomerFeedback() {
 	// customer-feeback-backgroundimage.png
 	return (
 		<div className="relativew-full bg-gradient-to-br from-[#e5f5ec] to-[#f9fdfb] px-4 py-20 md:px-6 lg:px-12">
-			{/* background image */}
-
 			<div className="mx-auto flex  max-w-7xl flex-col-reverse  items-center  gap-6 md:justify-center lg:flex-row ">
-				{/* Right Section (Image with decorations) */}
 				<div className="relative flex justify-center md:w-[440px] lg:w-[490px]">
-					{/* Decorative Fruits */}
 					<Image
 						src="/customer-feedbackimages/oilimage.svg"
 						alt="Top Left"
@@ -65,9 +61,7 @@ export default function CustomerFeedback() {
 					</div>
 				</div>
 
-				{/* Left Section (Text + Box) */}
 				<div className="relative flex flex-col justify-center text-center lg:text-left">
-					{/* Watermelon Decoration */}
 					<Image
 						src="/customer-feedbackimages/watermelonimage.svg"
 						alt="Watermelon"
@@ -77,12 +71,10 @@ export default function CustomerFeedback() {
 					/>
 
 					<div className="flex flex-col items-center justify-center text-center lg:w-[519px]">
-						{/* Heading */}
-						<h2 className="mb-2 font-konkhmer text-[32px] font-normal leading-[44px] text-[#8B4513] sm:text-[40px] sm:leading-[56px] md:text-[48px] md:leading-[64px] lg:mb-4 lg:text-[64px] lg:leading-[91px]">
+						<h2 className="mb-2  text-[32px] font-bold leading-[44px] text-[#8B4513] sm:text-[40px] sm:leading-[56px] md:text-[48px] md:leading-[64px] lg:mb-4 lg:text-[64px] lg:leading-[91px]">
 							CUSTOMER FEEDBACK
 						</h2>
 
-						{/* Stars */}
 						<div className="mb-10 flex justify-center sm:mb-12 md:mb-8 lg:mb-8 lg:justify-start">
 							<div className="flex space-x-1 text-[#8BC34A]">
 								{Array.from({ length: 5 }).map((_, i) => (
@@ -92,9 +84,8 @@ export default function CustomerFeedback() {
 						</div>
 					</div>
 
-					{/* Feedback Box */}
 					<div className="mx-auto hidden w-full max-w-md rounded-[16px] bg-[#FFF1E1] px-4 py-4 sm:max-w-lg md:block md:max-w-md lg:w-[619.45px]  lg:rounded-[25px] lg:px-6 lg:py-4">
-						<p className="font-inter text-[14px] font-medium leading-[22px] text-black sm:text-[15px] sm:leading-[24px] md:text-[18px] md:leading-[28px] lg:text-[28px] lg:leading-[38px] ">
+						<p className=" text-[14px] leading-[22px] text-black sm:text-[15px] sm:leading-[24px] md:text-[18px] md:leading-[28px] lg:text-[28px] lg:leading-[38px] ">
 							Every product from Kisan Basket reflects our promise of purity, freshness, and honesty — and
 							that’s why our users keep coming back.
 						</p>

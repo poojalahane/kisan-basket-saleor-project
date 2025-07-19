@@ -315,9 +315,9 @@ export default function ShopPage() {
 							<button className="rounded-lg bg-[#8bc34a] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#689f38]">
 								Get Directions
 							</button>
-							<button className="rounded-lg border border-[#5d4037] px-6 py-3 text-base font-semibold text-[#5d4037] transition hover:bg-[#5d4037] hover:text-white">
+							{/* <button className="rounded-lg border border-[#5d4037] px-6 py-3 text-base font-semibold text-[#5d4037] transition hover:bg-[#5d4037] hover:text-white">
 								Chat with Us
-							</button>
+							</button> */}
 						</div>
 					</div>
 

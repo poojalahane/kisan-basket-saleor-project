@@ -58,7 +58,7 @@ export async function ProductListingSection({ channel, cursor }: Props) {
 		},
 		revalidate: 60,
 	});
-
+	console.log("products", products);
 	if (!products) notFound();
 
 	const topProducts = products.edges.slice(0, 8).map((e) => e.node);

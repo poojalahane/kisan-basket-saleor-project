@@ -45,7 +45,7 @@ const CarouselHeroSection: React.FC = () => {
 							</span>
 						</h1>
 						<p className="mb-8 text-balance text-xl" style={{ color: "#654321" }}>
-							Experience the finest organic produce, traditional atta, cold-pressed oils, and authentic spices
+							Experience the finest produce, traditional atta, cold-pressed oils, and authentic spices
 							directly from local farms.
 						</p>
 						<div className="flex flex-col gap-4 sm:flex-row">
@@ -118,14 +118,14 @@ const CarouselHeroSection: React.FC = () => {
 						})}
 
 						{/* Floating badges */}
-						<div className="absolute left-4 top-4 z-20 rounded-lg bg-white/90 p-3 shadow-lg backdrop-blur-md">
+						{/* <div className="absolute left-4 top-4 z-20 rounded-lg bg-white/90 p-3 shadow-lg backdrop-blur-md">
 							<div className="flex items-center space-x-2">
 								<Shield className="h-5 w-5" style={{ color: "#8BC34A" }} />
 								<span className="text-sm font-medium" style={{ color: "#654321" }}>
 									100% Organic
 								</span>
 							</div>
-						</div>
+						</div> */}
 
 						<div className="absolute bottom-4 right-4 z-20 rounded-lg bg-white/90 p-3 shadow-lg backdrop-blur-md">
 							<div className="flex items-center space-x-2">
@@ -137,7 +137,7 @@ const CarouselHeroSection: React.FC = () => {
 						</div>
 
 						<div
-							className="absolute -right-6 -top-6 z-50 rounded-full p-4 shadow-xl"
+							className="absolute -right-6 -top-6 z-20 rounded-full p-4 shadow-xl"
 							style={{ backgroundColor: "#8BC34A", color: "#fff" }}
 						>
 							<Leaf className="h-8 w-8" />

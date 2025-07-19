@@ -18,6 +18,17 @@ fragment ProductListItem on Product {
 			}
 		}
 	}
+	variants {
+		id
+		name
+		pricing {
+			price {
+				gross {
+					amount
+				}
+			}
+		}
+	}
 	category {
 		id
 		name
