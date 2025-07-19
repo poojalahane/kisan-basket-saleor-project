@@ -99,9 +99,7 @@ export default function ProductCard({ product }: { product: ProductListItemFragm
 					</div>
 				</div>
 
-				{/* Product Details */}
 				<div className="p-4">
-					{/* Category & Rating */}
 					<div className="mb-2 flex items-center justify-between">
 						<span
 							className="rounded border px-2 py-0.5 text-xs font-medium"
@@ -130,10 +128,10 @@ export default function ProductCard({ product }: { product: ProductListItemFragm
 						<button
 							className="rounded-full p-1"
 							style={{ backgroundColor: "#8B4513" }}
-							onClick={(e) => {
-								e.preventDefault();
-								handleAddToCart();
-							}}
+							// onClick={(e) => {
+							// 	e.preventDefault();
+							// 	handleAddToCart();
+							// }}
 						>
 							<ShoppingCart className="h-4 w-4 text-white" />
 						</button>

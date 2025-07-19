@@ -15,7 +15,7 @@ export function Header({ channel, cartCount }: { channel: string; cartCount: num
 
 	const navLinks = [
 		{ href: "/", label: "Home" },
-		{ href: `/${channel}/shop`, label: "Shop" },
+		{ href: `/${channel}/products`, label: "Products" },
 		{ href: `/${channel}/outlet`, label: "Outlet" },
 		{ href: `/${channel}/contact`, label: "Contact" },
 		{ href: `/${channel}/blog`, label: "Blog" },

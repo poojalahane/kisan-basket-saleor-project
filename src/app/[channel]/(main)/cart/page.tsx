@@ -33,12 +33,7 @@ export default async function Page(props: { params: Promise<{ channel: string }>
 
 	return (
 		<>
-			{/* <section className="mx-auto   bg-[#dfe8ec] px-12 pt-10">
-				<h1 className="text-3xl  font-bold text-neutral-900">Your Cart</h1>
-				<p className="mt-2 text-sm text-neutral-500">Review your selected items before checkout.</p>
-			</section> */}
 			<div className="   flex flex-col gap-8 bg-[#dfe8ec] p-5 lg:flex-row">
-				{/* Product List */}
 				<ul
 					data-testid="CartProductList"
 					role="list"
@@ -46,7 +41,6 @@ export default async function Page(props: { params: Promise<{ channel: string }>
 				>
 					{checkout.lines.map((item) => (
 						<li key={item.id} className="flex items-center justify-between gap-4 py-6">
-							{/* Image */}
 							<div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-full border bg-neutral-50">
 								{item.variant?.product?.thumbnail?.url && (
 									<Image
@@ -59,7 +53,6 @@ export default async function Page(props: { params: Promise<{ channel: string }>
 								)}
 							</div>
 
-							{/* Product Info */}
 							<div className="flex min-w-0 max-w-sm flex-1 flex-col justify-center px-4">
 								<LinkWithChannel
 									href={getHrefForVariant({
@@ -74,25 +67,21 @@ export default async function Page(props: { params: Promise<{ channel: string }>
 								</LinkWithChannel>
 							</div>
 
-							{/* Quantity Selector   */}
 							<div className="flex items-center gap-2 rounded-full border border-[#383e45] px-3 py-1 text-sm font-medium text-neutral-700">
 								<button className="text-xl">−</button>
 								<span>{item.quantity}</span>
 								<button className="text-xl">+</button>
 							</div>
 
-							{/* Price (Static format) */}
 							<p className="w-20 text-right text-sm font-semibold text-neutral-900">
 								$ {Number(item.totalPrice?.gross?.amount || 0).toFixed(2)}
 							</p>
 
-							{/* Delete Button */}
 							<DeleteLineButton checkoutId={checkoutId} lineId={item.id} />
 						</li>
 					))}
 				</ul>
 
-				{/* Order Info */}
 				<div className="w-full lg:mt-12 lg:w-1/3">
 					<div className="rounded-xl  border-2 border-[#d0dee9] bg-neutral-50 px-4 py-2">
 						<div className="flex items-center justify-between gap-2 py-2">
