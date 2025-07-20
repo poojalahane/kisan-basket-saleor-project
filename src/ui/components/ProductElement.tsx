@@ -8,6 +8,7 @@ import { addToCartAction } from "@/app/actions/addToCartAction";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { LinkWithChannel } from "../atoms/LinkWithChannel";
+import { ChevronDown } from "lucide-react";
 
 export default function ProductCard({ product }: { product: ProductListItemFragment }) {
 	const [isLiked, setIsLiked] = useState(false);
@@ -18,6 +19,7 @@ export default function ProductCard({ product }: { product: ProductListItemFragm
 		product.variants?.[0]?.pricing?.price?.gross?.amount || 0,
 	);
 	const [selectedVariantName, setSelectedVariantName] = useState(product.variants?.[0]?.name || "");
+	const [showMoreVariants, setShowMoreVariants] = useState(false);
 
 	const router = useRouter();
 	const variantId = product.variants?.[0]?.id;
@@ -38,6 +40,7 @@ export default function ProductCard({ product }: { product: ProductListItemFragm
 	const discount = originalPrice ? Math.round(((originalPrice - priceStart!) / originalPrice) * 100) : 0;
 
 	const staticRating = 4;
+	const MAX_VISIBLE_VARIANTS = 3;
 
 	// console.log("product_cart page", product.variants.name);
 	return (
@@ -78,65 +81,46 @@ export default function ProductCard({ product }: { product: ProductListItemFragm
 					>
 						<Heart className={`h-5 w-5 ${isLiked ? "fill-current" : ""}`} />
 					</button>
-
-					<div
-						className={`absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300 ${
-							isHovered ? "opacity-100" : "opacity-0"
-						}`}
+				</div>
+			</LinkWithChannel>
+			<div className="p-4">
+				<div className="mb-2 flex items-center justify-between">
+					<span
+						className="rounded border px-2 py-0.5 text-xs font-medium"
+						style={{ borderColor: "#8B4513", color: "#8B4513" }}
 					>
-						<button
-							disabled={isPending}
-							onClick={(e) => {
-								e.preventDefault();
-								handleAddToCart();
-							}}
-							className="rounded-md px-4 py-2 text-sm font-semibold text-white"
-							style={{ backgroundColor: "#8BC34A" }}
-						>
-							<ShoppingCart className="mr-2 inline h-4 w-4" />
-							{isPending ? "Adding..." : "Add to Cart"}
-						</button>
+						{product.category?.name ?? "Category"}
+					</span>
+					<div className="flex items-center space-x-1">
+						<Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+						<span className="text-sm text-gray-600">{staticRating}</span>
 					</div>
 				</div>
 
-				<div className="p-4">
-					<div className="mb-2 flex items-center justify-between">
-						<span
-							className="rounded border px-2 py-0.5 text-xs font-medium"
-							style={{ borderColor: "#8B4513", color: "#8B4513" }}
-						>
-							{product.category?.name ?? "Category"}
+				<h3 className="line-clamp-2 text-sm font-semibold text-[#8B4513] transition-colors hover:text-[#8BC34A] sm:text-base">
+					{product.name}
+				</h3>
+
+				<div className="mt-2 flex items-center justify-between">
+					<div className="flex items-center space-x-2">
+						<span className="text-lg font-bold" style={{ color: "#8BC34A" }}>
+							₹{selectedVariantPrice ?? "--"}
 						</span>
-						<div className="flex items-center space-x-1">
-							<Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-							<span className="text-sm text-gray-600">{staticRating}</span>
-						</div>
+						{originalPrice && <span className="text-sm text-gray-500 line-through">₹{originalPrice}</span>}
 					</div>
 
-					<h3 className="line-clamp-2 text-sm font-semibold text-[#8B4513] transition-colors hover:text-[#8BC34A] sm:text-base">
-						{product.name}
-					</h3>
-
-					<div className="mt-2 flex items-center justify-between">
-						<div className="flex items-center space-x-2">
-							<span className="text-lg font-bold" style={{ color: "#8BC34A" }}>
-								₹{priceStart?.toFixed(0) ?? "--"}
-							</span>
-							{originalPrice && <span className="text-sm text-gray-500 line-through">₹{originalPrice}</span>}
-						</div>
-
-						<button
-							className="rounded-full p-1"
-							style={{ backgroundColor: "#8B4513" }}
-							// onClick={(e) => {
-							// 	e.preventDefault();
-							// 	handleAddToCart();
-							// }}
-						>
-							<ShoppingCart className="h-4 w-4 text-white" />
-						</button>
-					</div>
-					{product.variants && (
+					{/* <button
+						className="rounded-full p-1"
+						style={{ backgroundColor: "#8B4513" }}
+						// onClick={(e) => {
+						// 	e.preventDefault();
+						// 	handleAddToCart();
+						// }}
+					>
+						<ShoppingCart className="h-4 w-4 text-white" />
+					</button> */}
+				</div>
+				{/* {product.variants && (
 						<div className="mt-2 flex flex-wrap gap-2">
 							{product.variants.map((variant) => (
 								<button
@@ -157,9 +141,80 @@ export default function ProductCard({ product }: { product: ProductListItemFragm
 								</button>
 							))}
 						</div>
-					)}
-				</div>
-			</LinkWithChannel>
+					)} */}
+				{product.variants && product.variants.length > 0 && (
+					<div className="relative mt-2 flex flex-wrap gap-2">
+						{product.variants.slice(0, MAX_VISIBLE_VARIANTS).map((variant) => (
+							<button
+								key={variant.id}
+								onClick={(e) => {
+									e.preventDefault();
+									setSelectedVariantId(variant.id);
+									setSelectedVariantPrice(variant.pricing?.price?.gross?.amount || 0);
+									setSelectedVariantName(variant.name);
+								}}
+								className={`rounded border px-2 py-1 text-xs ${
+									selectedVariantId === variant.id
+										? "border-[#8BC34A] bg-[#f4fff0] text-[#4b830d]"
+										: "border-gray-300 text-gray-600"
+								} transition-colors`}
+							>
+								{variant.name}
+							</button>
+						))}
+
+						{product.variants.length > MAX_VISIBLE_VARIANTS && (
+							<div className="relative">
+								<button
+									onClick={() => setShowMoreVariants((prev) => !prev)}
+									className="flex items-center gap-1 rounded border border-gray-300 px-2 py-1 text-xs text-gray-600"
+								>
+									More <ChevronDown size={14} />
+								</button>
+
+								{showMoreVariants && (
+									<div className="absolute left-0 z-10 mt-1 w-max rounded-md border border-gray-200 bg-white shadow-md">
+										{product.variants.slice(MAX_VISIBLE_VARIANTS).map((variant) => (
+											<button
+												key={variant.id}
+												onClick={(e) => {
+													e.preventDefault();
+													setSelectedVariantId(variant.id);
+													setSelectedVariantPrice(variant.pricing?.price?.gross?.amount || 0);
+													setSelectedVariantName(variant.name);
+													setShowMoreVariants(false);
+												}}
+												className={`block w-full px-4 py-2 text-left text-xs ${
+													selectedVariantId === variant.id
+														? "bg-[#f4fff0] text-[#4b830d]"
+														: "text-gray-700 hover:bg-gray-100"
+												}`}
+											>
+												{variant.name}
+											</button>
+										))}
+									</div>
+								)}
+							</div>
+						)}
+					</div>
+				)}
+			</div>
+
+			<div className="w-full  p-4 transition-opacity duration-300">
+				<button
+					disabled={isPending}
+					onClick={(e) => {
+						e.preventDefault();
+						handleAddToCart();
+					}}
+					className=" flex w-full items-center justify-center rounded-md px-4 py-2 text-sm font-semibold text-white"
+					style={{ backgroundColor: "#8BC34A" }}
+				>
+					<ShoppingCart className="mr-2 inline h-4 w-4" />
+					{isPending ? "Adding..." : "Add to Cart"}
+				</button>
+			</div>
 		</div>
 	);
 }

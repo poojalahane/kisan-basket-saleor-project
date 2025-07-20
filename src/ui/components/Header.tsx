@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
-import { CartNavItem } from "./nav/components/CartNavItem";
 
 export function Header({ channel, cartCount }: { channel: string; cartCount: number }) {
 	const router = useRouter();
