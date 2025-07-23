@@ -21,13 +21,14 @@ export async function ProductListingSection({ channel, cursor }: Props) {
 	});
 
 	if (!products) notFound();
+//	console.log("product is homepage: ", products);
 
 	const newSearchParams = new URLSearchParams({
 		...(products.pageInfo.endCursor && { cursor: products.pageInfo.endCursor }),
 	});
 
 	return (
-		<section className="max-w-7xl lg:p-8 md:p-4 md:pb-8  lg:pb-16 md:mx-auto">
+		<section className="max-w-7xl md:mx-auto md:p-4 md:pb-8  lg:p-8 lg:pb-16">
 			<h2 className="sr-only">Product list</h2>
 			<ProductList products={products.edges.map((e) => e.node)} />
 			{/* <Pagination

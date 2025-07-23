@@ -3,7 +3,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import OtpInput from "@/ui/components/register/OtpInput";
-export function LoginForm() {
+import { executeGraphQL } from "@/lib/graphql";
+import { TokenCreateDocument } from "@/gql/graphql";
+export async function LoginForm() {
 	const router = useRouter();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -17,6 +19,39 @@ export function LoginForm() {
 		mobileNumber: "",
 		otp: "",
 	});
+
+	// try {
+	// 	const data = await executeGraphQL(TokenCreateDocument, {
+	// 		variables: {
+	// 			email,
+	// 			password,
+	// 		},
+	// 		withAuth: false, // 👈 Login must be done without auth
+	// 	});
+
+	// 	const { tokenCreate } = data;
+
+	// 	if (tokenCreate?.errors?.length) {
+	// 		console.error("Login errors:", tokenCreate.errors);
+	// 		return { success: false, errors: tokenCreate.errors };
+	// 	}
+
+	// 	if (tokenCreate?.token && tokenCreate?.refreshToken) {
+	// 		// Store token securely (cookies, localStorage, etc.)
+	// 		console.log("Login successful:", tokenCreate.user);
+	// 		return {
+	// 			success: true,
+	// 			user: tokenCreate.user,
+	// 			token: tokenCreate.token,
+	// 			refreshToken: tokenCreate.refreshToken,
+	// 		};
+	// 	}
+
+	// 	return { success: false, errors: [{ message: "Invalid login response" }] };
+	// } catch (error) {
+	// 	console.error("Login failed:", error);
+	// 	return { success: false, errors: [{ message: error.message }] };
+	// }
 
 	const validateEmail = (email: string) => {
 		const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -250,31 +285,30 @@ export function LoginForm() {
 					{/* OTP Field - shown after OTP is sent in OTP views */}
 					{(loginMethod === "emailOtp" || loginMethod === "mobileOtp") && isOtpSent && (
 						<div>
-							
 							<div className="mb-4 flex justify-center">
 								<OtpInput digits={5} />
 							</div>
-							<div className="flex items-center rounded-[10px] border border-gray-300 px-3 py-0 focus-within:ring-2 focus-within:ring-green-700">
-								<div className="relative mr-3 h-5 w-5">
-									<Image src="/loginpageimages/otpicon.svg" alt="otp icon" fill className="object-contain" />
+
+							<div className="mt-1 flex justify-between  gap-2  md:mt-2 lg:mt-3">
+								<div>
+									<button
+										type="button"
+										onClick={switchToEmailPassword}
+										className=" text-sm text-gray-500 hover:underline"
+									>
+										Cancel
+									</button>
 								</div>
-								<input
-									id="otp"
-									type="tel"
-									className="w-full border-none bg-white outline-none focus:outline-none focus:ring-0"
-									placeholder="Enter 6-digit OTP"
-									value={otp}
-									onChange={handleOtpChange}
-									maxLength={6}
-								/>
+								<div>
+									<p className=" text-right text-xs text-gray-500">
+										Didn't receive OTP?{" "}
+										<span className="cursor-pointer text-green-700 hover:underline" onClick={handleSendOtp}>
+											Resend
+										</span>
+									</p>
+								</div>
 							</div>
-							{errors.otp && <p className="mt-1 text-xs text-red-500">{errors.otp}</p>}
-							<p className="mt-1 text-right text-xs text-gray-500">
-								Didn't receive OTP?{" "}
-								<span className="cursor-pointer text-green-700 hover:underline" onClick={handleSendOtp}>
-									Resend
-								</span>
-							</p>
+							{/* {errors.otp && <p className="mt-1 text-xs text-red-500">{errors.otp}</p>} */}
 						</div>
 					)}
 
@@ -291,7 +325,7 @@ export function LoginForm() {
 						) : (
 							<button
 								type="submit"
-								className="w-full rounded bg-green-700 py-2 text-white shadow transition hover:bg-green-800"
+								className="w-full rounded-md bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800"
 							>
 								{loginMethod === "emailPassword" ? "LOGIN" : "VERIFY OTP"}
 							</button>
